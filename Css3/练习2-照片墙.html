@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        perspective: 1000px;
+    }
+
+    .box {
+        margin: 100px auto;
+        width: 200px;
+        height: 200px;
+        border: 1px dashed black;
+        position: relative;
+        /* 想实现 子元素有3d效果 必须在其父元素上添加 
+        transform-style: preserve-3d; */
+        transform-style: preserve-3d;
+        /* transform: rotateY(30deg); */
+        transition: all 1s ease;
+    }
+
+    img {
+        width: 200px;
+        height: 200px;
+        transition: all 1s ease;
+    }
+
+    .div1 {
+        transform: rotate(60deg);
+
+    }
+
+    .div2 {
+        transform: rotate(30deg);
+    }
+
+    img:hover {
+        transform: translateZ(400px);
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div><img class="div1" src="img\小米游戏本_wallpaper_02_4K.jpg"></div>
+        <div><img class="div2" src="img\QQ图片20190619105011.jpg"></div>
+    </div>
+
+</body>
+
+</html>

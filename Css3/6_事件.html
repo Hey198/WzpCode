@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        300ms延迟
+        默认情况下 页面在移动端访问时会进行缩放操作
+        当用户点击两次时会将页面进行放大或缩小
+        因此在绑定click事件时 会等待300ms
+        看用户是否执行第二次点击操作 如果没有则认为是普通的点击事件
+        否则执行页面的放大或缩小操作
+     -->
+    <div id="div1"></div>
+    <script>
+        var oDiv1 = document.getElementById("div1");
+        oDiv1.ontouchstart = function () {
+            console.log("ontouchstart")
+        }
+        // oDiv1.ontouchmove = function () {
+        //     console.log("ontouchmove")
+        // }
+        // oDiv1.ontouchend = function () {
+        //     console.log("ontouchend")
+        // }
+        oDiv1.onclick = function(){
+            console.log("click")
+        }
+    </script>
+</body>
+
+</html>

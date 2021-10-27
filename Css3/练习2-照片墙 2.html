@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        background: url(./img/IMG_4520.JPG);
+        background-size: 100%;
+        background-attachment: fixed;
+        position: relative;
+    }
+    li {
+        list-style: none;
+        transition: all 2s ease;
+        position: absolute;
+        top: -130px;
+        left: -130px;
+    }
+    img {
+        width: 130px;
+        height: 130px;
+    }
+</style>
+<body>
+    <div>
+        <li><img class="img0" src="../Css3/img/241632534804_.pic.jpg" alt=""></li>
+        <li> <img class="img1" src="../Css3/img/251632534805_.pic.jpg" alt=""></li>
+        <li><img class="img2" src="../Css3/img/441632534887_.pic.jpg" alt=""></li>
+        <li><img class="img3" src="../Css3/img/271632534806_.pic.jpg" alt=""></li>
+        <li><img class="img4" src="../Css3/img/281632534806_.pic.jpg" alt=""></li>
+        <li><img class="img5" src="../Css3/img/291632534806_.pic.jpg" alt=""></li>
+        <li><img class="img6" src="../Css3/img/301632534807_.pic_hd.jpg" alt=""></li>
+        <li> <img class="img7" src="../Css3/img/311632534807_.pic_hd.jpg" alt=""></li>
+        <li><img class="img8" src="../Css3/img/321632534807_.pic_hd.jpg" alt=""></li>
+        <li> <img class="img9" src="../Css3/img/331632534862_.pic.jpg" alt=""></li>
+        <li> <img class="img10" src="../Css3/img/431632534887_.pic.jpg" alt=""></li>
+        <li> <img class="img11" src="../Css3/img/341632534863_.pic.jpg" alt=""></li>
+        <li><img class="img12" src="../Css3/img/351632534863_.pic.jpg" alt=""></li>
+        <li> <img class="img13" src="../Css3/img/361632534863_.pic.jpg" alt=""></li>
+        <li> <img class="img14" src="../Css3/img/371632534864_.pic.jpg" alt=""></li>
+        <li> <img class="img15" src="../Css3/img/381632534864_.pic.jpg" alt=""></li>
+        <li> <img class="img16" src="../Css3/img/391632534864_.pic.jpg" alt=""></li>
+        <li> <img class="img17" src="../Css3/img/401632534864_.pic.jpg" alt=""></li>
+        <li> <img class="img18" src="../Css3/img/411632534865_.pic.jpg" alt=""></li>
+        <li> <img class="img19" src="../Css3/img/421632534886_.pic.jpg" alt=""></li>
+    </div>
+    <script>
+        let oLi = document.getElementsByTagName("li");
+        let n = 0;
+        for (let i = 4; i > 0; i--) {
+            for (let j = 5; j > 0; j--) {
+                oLi[n].style.top = 70* i + (i - 1) * 130 + "px";
+                oLi[n].style.left = 130 * j + (j - 1) * 130 + "px";
+                oLi[n].style.transitionDelay=n*50+"ms";
+                oLi[n].style.transform="rotate(60deg)" ;
+                oLi[n].style.transform = "rotate(" + (Math.random() * 40 - 20)+ "deg)"
+                n++;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 元素垂直水平居中长宽大小 用定位之后 margin top -50% margin left 50&
+    未知长宽使用transform:translate(X,Y) */
+    .box {
+        width: 400px;
+        height: 400px;
+        border: 1px dashed black;
+        position: relative;
+    }
+
+    .div {
+        /* width: 200px;
+        height: 200px; */
+        background-color: rgb(52, 105, 202);
+        /* transform: translateX(100%);
+        transform: translateY(100%); */
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+         /* 也可以是 百分比形式 相对于自己的长和宽 */
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="div">hello
+            hello<br/>hello<br/>hello<br/>hello<br/>
+        </div>
+    </div>
+
+</body>
+
+</html>

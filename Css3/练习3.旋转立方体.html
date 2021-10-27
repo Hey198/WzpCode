@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        perspective: 1000px;
+    }
+
+    .box div {
+        width: 400px;
+        height: 400px;
+        background-color: rgba(255, 255, 255, 0.3);
+        border: 1px dashed black;
+        font-size: 30px;
+        text-align: center;
+        line-height: 300px;
+        position: absolute;
+        background-image: url(./img/f3a90dad8e89a7b2ee694238628f284.jpg);
+        background-size: contain;
+        top: 0;
+        left: 0;
+
+    }
+
+    .box {
+        width: 400px;
+        height: 400px;
+        border: 1px dashed white;
+        margin-left: 350px;
+        margin-top: 200px;
+        position: relative;
+        transform-style: preserve-3d;
+        /* ease 先快后慢速 linear 线性 */
+        animation: foo 5s linear infinite;
+    }
+
+    .one {
+        /* background-image: url(./img/f3a90dad8e89a7b2ee694238628f284.jpg); */
+        transform: translateZ(200px);
+    }
+
+    .two {
+        transform: translateZ(-200px);
+    }
+
+    .six {
+        transform: rotateX(90deg) translateZ(-200px);
+    }
+
+    .five {
+        transform: rotateX(90deg) translateZ(200px);
+    }
+
+    .three {
+        /* 旋转之后 变成平面 它的z轴也变为上下; */
+        transform: rotateY(90deg) translateZ(-200px);
+    }
+
+    .four {
+        transform: rotateY(90deg) translateZ(200px);
+    }
+
+    @keyframes foo {
+        from {
+            transform: rotateY(0);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+        <div class="four">4</div>
+        <div class="five">5</div>
+        <div class="six">6</div>
+    </div>
+</body>
+
+</html>

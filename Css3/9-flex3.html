@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+
+        display: flex;
+
+        height: 100vh;
+        /* 转换为一列 */
+        flex-direction: column;
+        /* 主轴方向 */
+        justify-content: space-between;
+        /* 交叉轴方向 */
+        align-items: center;
+
+    }
+
+    li {
+        list-style: none;
+        width: 50px;
+        height: 50px;
+        background-color: rgb(93, 105, 207);
+        /* float: left; */
+        /* 转换为行快元素 每个元素之间有小间距
+        display: inline-block; */
+        /* 元素不足以占满全屏 每个元素按相同比例 缩放 */
+        flex-grow: 1;
+    }
+ li:nth-child(1) {
+        flex-grow: 2;
+    }
+    /* 把order 设置给某一个特定的元素 设置顺序 */
+    /* li:nth-child(1) {
+        order: 2;
+    } */
+
+    /* :nth-child()控制当前元素 作为子元素的第几个 */
+
+    li:nth-child(even) {
+        background-color: rgb(26, 162, 180);
+    }
+</style>
+
+<body>
+    <ul>
+        <!-- li{$}*12 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <!-- <li>6</li>
+        <li>7</li>
+        <li>8</li> -->
+        <!-- <li>9</li>
+        <li>10</li>
+        <li>11</li>
+        <li>12</li>
+        <li>13</li>
+        <li>14</li>
+        <li>15</li>
+        <li>16</li>
+        <li>17</li>
+        <li>18</li>
+        <li>19</li>
+        <li>20</li>
+        <li>21</li>
+        <li>22</li>
+        <li>23</li>
+        <li>24</li>
+        <li>25</li>
+        <li>26</li>
+        <li>27</li>
+        <li>28</li>
+        <li>29</li>
+        <li>30</li> -->
+
+
+    </ul>
+</body>
+
+</html>

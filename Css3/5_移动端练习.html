@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./reset.css">
+    <script src="./rem.js"></script>
+    <style>
+        #nav {
+            height: 0.6rem;
+            margin-top: 0.4rem;
+            padding: 0.14rem 0.3rem;
+            display: flex;
+        }
+
+        #location {
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            margin-right: 0.2rem;
+        }
+
+        #location img {
+            width: 0.25rem;
+            height: 0.31rem;
+        }
+
+        #search {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            border-radius: 15px;
+            background: #F2F2F2;
+            padding: 0.12rem 0.23rem;
+        }
+
+        #search img {
+            width: 0.34rem;
+            height: 0.36rem;
+            margin-right: 0.17rem;
+        }
+
+        #search input {
+            flex: 1;
+            background: #F2F2F2;
+            font-size: 13px;
+            color: #808080;
+        }
+
+        #code,
+        #message {
+            font-size: 10px;
+            margin-left: 0.3rem;
+            text-align: center;
+            line-height: 1;
+        }
+
+        #code img,
+        #message img {
+            width: 0.34rem;
+            height: 0.34rem;
+        }
+
+        #banner img {
+            width: 100%;
+            height: 1.66rem;
+        }
+
+        #label {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0.26rem 0.54rem 0.16rem 0.59rem;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        #label img {
+            width: 0.72rem;
+            height: 0.72rem;
+        }
+
+        #label #label-list {
+            margin-right: 0.69rem;
+            margin-bottom: 0.27rem;
+        }
+
+        #label #label-list:nth-child(5) {
+            margin-right: 0;
+        }
+
+        #label #label-list:nth-child(10) {
+            margin-right: 0;
+        }
+
+        #ad {
+            display: flex;
+            position: relative;
+            /* border-top: 1px solid red;
+            border-bottom: 0.5px solid red; */
+        }
+
+        #ad::before {
+            content: "";
+            display: block;
+            width: 100%;
+            border-top: 1px solid #e0e0e0;
+            transform: scaleY(0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #ad::after {
+            content: "";
+            display: block;
+            width: 100%;
+            border-top: 1px solid #e0e0e0;
+            transform: scaleY(0.5);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        #ad img {
+            widows: 0.95rem;
+            height: 0.69rem;
+        }
+
+        #ad-list {
+            flex: 1;
+            text-align: center;
+            padding: 0.2rem 0 0.36rem 0;
+            position: relative;
+        }
+
+        #ad-list #ad-title {
+            font-size: 13px;
+        }
+
+        #ad-list #ad-text {
+            font-size: 11px;
+            color: #808080;
+        }
+
+        #ad-list:nth-child(1)::before {
+            content: "";
+            display: block;
+            height: 100%;
+            border-left: 1px solid #e0e0e0;
+            transform: scaleX(0.5);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #ad-list:nth-child(2)::before {
+            content: "";
+            display: block;
+            height: 100%;
+            border-left: 1px solid #e0e0e0;
+            transform: scaleX(0.5);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #ad-list:nth-child(3)::before {
+            content: "";
+            display: block;
+            height: 100%;
+            border-left: 1px solid #e0e0e0;
+            transform: scaleX(0.5);
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        #sale {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.19rem 0.3rem;
+        }
+
+        #sale-title {
+            font-size: 14px;
+            margin-right: 0.23rem;
+            font-weight: 500;
+        }
+
+        #sale-time {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        #sale-time .time-left {
+            font-size: 10px;
+            display: block;
+            width: 0.24rem;
+            height: 0.24rem;
+            background: #333333;
+            color: #ffffff;
+            text-align: center;
+            line-height: 0.24rem;
+        }
+
+        #sale-time .time-right {
+            display: block;
+            font-size: 11px;
+            color: #7E7E7E;
+            margin-left: 0.2rem;
+        }
+
+        #sale-more {
+            font-size: 12px;
+            color: #7E7E7E;
+        }
+
+        #sale-act {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.18rem 0.3rem 0.32rem 0.3rem;
+            position: relative;
+        }
+
+        #sale-act::before {
+            content: "";
+            display: block;
+            width: 100%;
+            border-top: 1px solid #e0e0e0;
+            transform: scaleY(0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #sale-act::after {
+            content: "";
+            display: block;
+            width: 100%;
+            border-top: 1px solid #e0e0e0;
+            transform: scaleY(0.5);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        #sale-act img {
+            width: 1.67rem;
+            height: 1.48rem;
+        }
+
+        #sale-act #act-title {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        #sale-act #act-num {
+            font-size: 10px;
+        }
+
+        #act-list {
+            position: relative;
+        }
+
+        #act-list #act-text {
+            width: 0.98rem;
+            height: 0.28rem;
+            background: #FE4845;
+            color: #ffffff;
+            font-size: 10px;
+            text-align: center;
+            line-height: 0.28rem;
+            position: absolute;
+            top: 0.14rem;
+            left: 0;
+        }
+        #tabbar{
+            width: 100%;
+            height: 0.9rem;
+            background: #E5E5E5;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            font-size: 10px;
+            color: #808080;
+            text-align: center;
+        }
+        #tabbar img{
+            width: 0.32rem;
+            height: 0.32rem;
+        }
+        #tabbar #tabbar-list:nth-child(1){
+            color: #FE4845;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="nav">
+            <div id="location">
+                <img src="./img/weizhi.png" alt="">
+                <div>上海</div>
+            </div>
+            <div id="search">
+                <img src="./img/fangdajing.png" alt="">
+                <input type="text" placeholder="搜索周边商场享受更多生活">
+            </div>
+            <div id="code">
+                <img src="./img/saoyisao.png" alt="">
+                <div>扫码</div>
+            </div>
+            <div id="message">
+                <img src="./img/xiaoxi.png" alt="">
+                <div>消息</div>
+            </div>
+        </div>
+        <div id="banner">
+            <img src="./img/bg.png" alt="">
+        </div>
+        <ul id="label">
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>美食</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>酒店</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>电影</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>景点</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>超市</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>外卖</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>娱乐</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>医疗</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>生活</h4>
+            </li>
+            <li id="label-list">
+                <img src="./img/chicken.png" alt="">
+                <h4>演出</h4>
+            </li>
+        </ul>
+        <div id="ad">
+            <div id="ad-list">
+                <div id="ad-title">签到奖励</div>
+                <div id="ad-text">签到兑好礼</div>
+                <img src="./img/youhui.png" alt="">
+            </div>
+            <div id="ad-list">
+                <div id="ad-title">签到奖励</div>
+                <div id="ad-text">签到兑好礼</div>
+                <img src="./img/youhui.png" alt="">
+            </div>
+            <div id="ad-list">
+                <div id="ad-title">签到奖励</div>
+                <div id="ad-text">签到兑好礼</div>
+                <img src="./img/youhui.png" alt="">
+            </div>
+            <div id="ad-list">
+                <div id="ad-title">签到奖励</div>
+                <div id="ad-text">签到兑好礼</div>
+                <img src="./img/youhui.png" alt="">
+            </div>
+        </div>
+        <div id="sale">
+            <div id="sale-title">优惠抢购</div>
+            <div id="sale-time">
+                <span class="time-left">1</span>
+                :
+                <span class="time-left">34</span>
+                :
+                <span class="time-left">20</span>
+                <span class="time-right">下场等待开启 | 12:00</span>
+            </div>
+            <div id="sale-more">更多优惠</div>
+        </div>
+        <div id="sale-act">
+            <div id="act-list">
+                <img src="./img/huodong.png" alt="">
+                <div id="act-text">半价划算</div>
+                <div id="act-title">麻辣小龙虾</div>
+                <div id="act-num">已售2486</div>
+            </div>
+            <div id="act-list">
+                <img src="./img/huodong.png" alt="">
+                <div id="act-text">半价划算</div>
+                <div id="act-title">麻辣小龙虾</div>
+                <div id="act-num">已售2486</div>
+            </div>
+            <div id="act-list">
+                <img src="./img/huodong.png" alt="">
+                <div id="act-text">半价划算</div>
+                <div id="act-title">麻辣小龙虾</div>
+                <div id="act-num">已售2486</div>
+            </div>
+            <div id="act-list">
+                <img src="./img/huodong.png" alt="">
+                <div id="act-text">半价划算</div>
+                <div id="act-title">麻辣小龙虾</div>
+                <div id="act-num">已售2486</div>
+            </div>
+        </div>
+        <div id="tabbar">
+            <div id="tabbar-list">
+                <img src="./img/home.png" alt="">
+                <div>首页</div>
+            </div>
+            <div id="tabbar-list">
+                <img src="./img/discover.png" alt="">
+                <div>发现</div>
+            </div>
+            <div id="tabbar-list">
+                <img src="./img/alarm.png" alt="">
+                <div>团购</div>
+            </div>
+            <div id="tabbar-list">
+                <img src="./img/mine.png" alt="">
+                <div>我的</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

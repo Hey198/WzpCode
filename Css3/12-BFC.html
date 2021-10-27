@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 超出范围内容隐藏
+    overflow hidden */
+    /* .box {
+        margin: 50px;
+        width: 400px;
+        height: 400px;
+        background-color: rgb(42, 7, 7);
+        overflow: hidden;
+    }
+
+    .div1 {
+        margin-top: 10px;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(19, 202, 248, 0.609);
+    } */
+
+    .box2 {
+        margin: 50px;
+        width: 400px;
+
+
+        border: 1px solid black;
+        /* 解决浮动塌陷 */
+        /* overflow: hidden; */
+        float: left;
+    }
+
+    .div2 {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(19, 202, 248, 0.609);
+        float: left;
+
+    }
+
+    /* 用BFC解决
+  外边距合并 高度塌陷 */
+    .div3 {
+        width: 100px;
+        height: 100px;
+        float: left;
+        background-color: rgba(59, 172, 84, 0.609);
+
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="div1">
+
+        </div>
+    </div>
+    <div class="box2">
+        <div class="div2"></div>
+        <div class="div3"></div>
+    </div>
+</body>
+
+</html>

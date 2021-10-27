@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    ul {
+
+        display: flex;
+
+        height: 100vh;
+
+
+    }
+
+    li {
+        list-style: none;
+        width: 200px;
+        height: 50px;
+        background-color: rgb(93, 105, 207);
+
+    }
+
+    li:nth-child(2) {
+        flex-shrink: 0;
+    }
+
+    li:nth-child(even) {
+        background-color: rgb(26, 162, 180);
+    }
+
+    /* 单独设置某一个元素 底部对齐
+    align-self */
+    /* li:nth-child(2) {
+        align-self: flex-end;
+    } */
+</style>
+
+<body>
+    <ul>
+        <!-- li{$}*12 -->
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+
+    </ul>
+</body>
+
+</html>

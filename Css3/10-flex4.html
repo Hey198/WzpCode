@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+#box{
+    display: flex;
+}
+#div1{
+    width: 200px;
+    height: 200px;
+    background-color: rgba(95, 219, 95, 0.644);
+}
+#div2{
+    height: 200px;
+    /* 把剩余空间 占据 */
+    flex-grow: 1;
+    background-color: rgb(40, 158, 194);
+}
+</style>
+
+<body>
+   <div id="box">
+       <div id="div1"></div>
+       <div id="div2"></div>
+   </div>
+</body>
+
+</html>

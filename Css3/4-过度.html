@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        margin: 100px auto;
+        width: 200px;
+        height: 200px;
+        border: 1px dashed black;
+        transform: rotate(180deg);
+    }
+
+    .div {
+        width: 200px;
+        height: 200px;
+        background-color: rgb(52, 105, 202);
+        /* transform: rotate(60deg);
+        transform-origin: 100px 0; */
+        transition: all 1s ease;
+    }
+
+    /* 选择鼠标指针浮动的元素 鼠标移入时 设置其样式 */
+    .div:hover {
+        /* width: 300px; */
+        transform: rotate(60deg);
+
+        /* 过度 transition
+        可接收参数 时间 方式 也可以监听宽度 高度 */
+        /* ease 过度效果 */
+        /* transition: width 1s ease; */
+        /* 监听所有参数 all */
+        /* 可以展开写 */
+        /* transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: ease; */
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="div">
+        </div>
+    </div>
+
+</body>
+
+</html>
