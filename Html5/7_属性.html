@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1" data-like="eat" data-first-name="liu"></div>
+    <!--  懒加载 统一显示图片 当图片到视口时加载特定图片 -->
+    <!-- <img data-src="../css3/image/1.jpg" src="" alt=""> -->
+    <!-- 
+        懒加载：
+        有时一个网页会包含很多图片，例如淘宝京东购物网站 
+        页面的图片有很多 不仅印象页面的渲染速度 对用户的体验也不好
+        对服务器压力也很大
+
+        为了解决这个问题 提高用户体验 就有这种图片的懒加载方法
+        他会优先加载可视区域的内容 其他部分等进入了可视区域或距离某一段高度时在加载
+        也从而提高性能
+     -->
+    <script>
+        var oDiv = document.querySelector("#div1")
+        // 设置属性
+        //属性不显示
+        oDiv.index = 1
+        //设置属性 在页面添加到标签上
+        oDiv.setAttribute("name","zs")
+        //  console.log(oDiv)
+
+        // h5新增 dataset.属性 / 在标签写data-xxx="xxx"
+        //
+        oDiv.dataset.age = 18
+        // 获取属性
+        console.log(oDiv.index)
+        console.log(oDiv.getAttribute("name"))
+        console.log(oDiv.dataset.age)
+        console.log(oDiv.dataset.like)
+        //有多个- 连接处以驼峰形式命名
+        console.log(oDiv.dataset.firstName)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script>
+        // 等页面加载完成后再去执行
+        window.onload = function () {
+            var oDiv = document.querySelector("#div1")
+            console.log(oDiv)
+        }
+    </script> -->
+</head>
+
+<body>
+    <div id="div1"></div>
+    <!-- 
+        <script src="script.js"></script>
+        页面加载dom元素遇到js 停止加载dom 先加载js并执行 最后再继续渲染dom加载
+     -->
+    <!-- 
+         <script async src="script.js"></script>
+         页面加载dom 遇到js 同时加载js 加载完js之后执行js 同时继续渲染dom
+      -->
+    <!-- 
+          <script defer src="myscript.js"></script>
+          页面加载dom 遇到js 同时加载js并继续渲染dom 等待dom全部渲染完成之后 在执行js
+     -->
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // cookie 本地存储 大小只有4K 
+        // 默认有效时间是在当前会话窗口内 浏览器退出之后就没有了 可以通过expires设置有效时间
+        document.cookie = "name='zs'"
+        document.cookie = "age=18"
+        var date = new Date()
+        date.setDate(date.getDate() + 1)
+        // console.log(date)
+        // console.log(date.getDate())
+        // console.log(date.setDate(date.getDate() + 1))
+        document.cookie = "password='a123';expires=" + date.toUTCString()
+
+        // 封装设置cookie的方法
+        function setCookie(key,value,expires){
+            // 获取当前时间
+            var date = new Date()
+            date.setDate(date.getDate() + expires)
+            document.cookie = key + "=" + value + ";expires=" + date.toUTCString()
+        }
+        setCookie("location","hrb",2)
+
+        //封装获取cookie的方法
+        function getCookie(key){
+            // 获取cookie
+            var cookie = document.cookie;
+            // 通过split方法按照; 返回一个数组给arr
+            var arr = cookie.split(";")
+            for(var i = 0;i < arr.length;i++){
+                var tmp = arr[i].split("=")
+                // console.log(tmp[0],tmp[1])
+                // trim() 去掉空格
+                if(tmp[0].trim() === key){
+                    return tmp[1]
+                }
+            }
+        }
+        // console.log(getCookie("age"))
+        // console.log(document.cookie);
+        // console.log(document.cookie.split(";"))
+        // 封装删除cookie的方法
+        function delCookie(key){
+            var date = new Date();
+            date.setDate(date.getDate() - 1)
+            document.cookie = key + "=null;expires=" + date.toUTCString()
+        }
+        console.log(delCookie("age"))
+        console.log(delCookie("password"))
+    </script>
+</body>
+</html>

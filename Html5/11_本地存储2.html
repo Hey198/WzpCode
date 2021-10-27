@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // h5 新增的本地存储 大小为5M
+        // localStorage  一直存储在浏览器中
+        // 设置localStorage 
+        localStorage.isLogin = true
+        localStorage.setItem("speak","hello")
+        // 获取localStorage
+        console.log(localStorage.isLogin)
+        console.log(localStorage.getItem("speak"))
+
+        // sessionStorage 有效时间在当前会话窗口内 
+        // 设置sessionStorage
+        sessionStorage.like = "eat"
+        sessionStorage.setItem("from","china")
+        // 获取sessionStorage
+        console.log(sessionStorage.like)
+        console.log(sessionStorage.getItem("from"))
+
+    </script>
+</body>
+</html>
