@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+    #box {
+        width: 200px;
+        height: 200px;
+        background-color: green;
+    }
+</style>
+ <script>
+        //全部加载完成所有的外部文件 之后执行
+
+        // window.onload=function(){
+        //     $("#box").on("click",function(){
+        //     console.log("hello");
+        // })
+        // }
+        //仅当文档标签执行完成 就执行 时间相对较快
+        $(document).ready(function(){
+            $("#box").on("click",function(){
+            console.log("hello");
+        })
+        })
+    </script>
+<body>
+    <div id="box"></div>
+   
+</body>
+
+</html>

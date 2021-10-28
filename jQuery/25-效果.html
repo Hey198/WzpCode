@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+    #box2 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+<button id="hide">hide</button>
+<button id="show">show</button>
+<button id="toggle">toggle</button>
+<button id="fadeIn">fadeIn</button>
+<button id="fadeOut">fadeOut</button>
+<button id="fadeTo">fadeTo</button>
+<button id="fadeToggle">fadeToggle</button>
+<button id="slideUp">slideUp</button>
+<button id="slideDown">slideDown</button>
+<button id="animate">animate</button>
+<div id="box2"></div>
+
+
+
+<body>
+
+    <script>
+        // show 内 可以 添加参数 效果时间
+        $("#hide").on("click", function () {
+            $("#box2").hide("slow");
+        })
+        $("#show").on("click", function () {
+            $("#box2").show(100);
+        })
+        // toggle 点击显示隐藏
+        $("#toggle").on("click", function () {
+            $("#box2").toggle(100);
+        })
+        // 显示 已隐藏内容 只能控制透明度
+        $("#fadeIn").on("click", function () {
+            $("#box2").fadeIn(1111);
+        })
+        // 隐藏显示内容 只能控制透明度
+        $("#fadeOut").on("click", function () {
+            $("#box2").fadeOut(100);
+        })
+        // 控制时间 透明度 这里所有方法都可以 在最后进行回调函数
+        // 当效果执行完毕调用函数
+        $("#fadeTo").on("click", function () {
+            $("#box2").fadeTo(100,0.5,function(){
+                console.log("done");
+            });
+        })
+
+        $("#fadeToggle").on("click", function () {
+            $("#box2").fadeToggle();
+        })
+        $("#slideUp").on("click", function () {
+            $("#box2").slideUp();
+        })
+        $("#slideDown").on("click", function () {
+            $("#box2").slideDown();
+        })
+
+        $("#animate").on("click",function(){
+           $("#box2").animate({
+               width:400 ,
+               height:400,
+               opacity:0.5
+           },1000)
+        })
+    </script>
+</body>
+
+</html>

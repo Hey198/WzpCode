@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <div>你最喜欢的运动是</div>
+    <input type="checkbox" value="1">麻将
+    <input type="checkbox" value="2">喝酒
+    <input type="checkbox" value="3">睡觉
+    <input type="checkbox" value="4">台球
+    <div>
+        <span>
+            <button class="but1">全选</button>
+            <button class="but2">全不选</button>
+            <button class="but3">反选</button>
+        </span>
+    </div>
+    <script>
+        $(".but1").click(function () {
+            $(":checkbox").prop("checked", true);
+            // console.log(this);
+        })
+        $(".but2").click(function () {
+            $(":checkbox").prop("checked", false)
+        })
+
+
+        $(".but3").click(function () {
+            var aCb = $(":checkbox");
+            aCb.each(function (index,item) {
+                console.log($(item).prop("checked"));
+                if($(item).prop("checked")){
+                    $(item).prop("checked",false)
+                }
+                else{
+                    $(item).prop("checked",true)
+                }
+            })
+        })
+
+        // 遍历方式 原生js 方法
+        // var arr = [2, 3, 4, 5, 6, 7, 8]
+        // arr.forEach(function (item, index, arr) {
+        //     console.log(item, index, arr);
+        // })
+    </script>
+
+</body>
+
+</html>

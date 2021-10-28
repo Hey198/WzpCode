@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+    table {
+        border: 1px solid black;
+        /* 消除边框 自带的外边距 */
+        border-collapse: collapse;
+    }
+
+    td {
+        border: 1px solid black;
+    }
+
+    th {
+        border: 1px solid black;
+    }
+
+    /* 表格的显示隐藏 
+    不可以使用 display block*/
+
+    #tr1 {
+        display: none;
+    }
+
+    #tr1 {
+        display: table-row;
+    }
+</style>
+
+<body>
+    <!-- 表格框 -->
+    <table>
+        <!-- 表头 和表身的 列数要保持一致 -->
+        <!-- 表头 -->
+        <!-- 表头中可以将 td 换成th -->
+
+        <thead>
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>C</th>
+                <th>D</th>
+
+            </tr>
+
+        </thead>
+
+        <!-- 表身 -->
+        <tbody>
+            <!-- tr 行 -->
+            <tr id="tr1">
+                <!-- td 列 -->
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <!-- 行 合并 rowspan 
+            列合并 colspan
+            合并 几个
+            <td colspan="2"></td>
+            -->
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+                <td>c</td>
+                <td>d</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <script>
+        // value 获取 文本框内的值
+
+
+        // 字符串拼接
+        var num=1000;
+        // 变量前后 用  + 实现字符拼接 ‘
+        // 将变量传入 只能识别字符串的 括号接收中
+        console.log("hello"+num+"hello");
+    </script>
+</body>
+
+</html>

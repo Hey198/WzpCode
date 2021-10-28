@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li class="active">list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+    </ul>
+    <button class="btn">add</button>
+    <script>
+        // 绑定事件
+        // $("li").on("click",function(){
+
+        // })
+        $(".btn").on("click", function () {
+            $('ul').append("<li>hello</li>")
+        })
+
+        // e.target 事件委托
+        // ul 内的 li 都可以触发事件
+        $("ul").on("click","li", function (e) {
+            // console.log($(e.target).index());
+            console.log($(this));
+        })
+    </script>
+</body>
+
+</html>

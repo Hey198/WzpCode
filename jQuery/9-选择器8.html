@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+    .active {
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="text">hello</div>
+    <input type="checkbox" id="che">
+    <script>
+        // var oDiv = document.getElementsByTagName("div");
+        // console.log(oDiv[0].getAttribute("class"));
+        // oDiv[0].setAttribute("class", "active");
+
+        // 传两个参数 设置
+        // $("div").attr("class","active") 
+
+        // 传一个参数 获取
+        // console.log($("div").attr("class"));
+
+        // 用atrr添加 checked 相当于已经添加checked 属性 
+        // 无关于取值 不可以 改变选中状态
+        // $(":checkbox").attr("checked" ,"checked")
+        // $("checked").removeAttr("checked")
+
+        // prop 只能获取 原生属性 id class 等
+        // 需要设置 自定义属性 才能获取
+        // $(":checkbox").prop("checked",true)
+        $(":checked").removeProp("checked")
+    </script>
+</body>
+
+</html>

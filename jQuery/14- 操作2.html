@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <div class="container">
+        <h2 class="hh2">Greetings</h2>
+        <div class="inner" id="inner1">hello</div>
+        <div class="inner">world</div>
+    </div>
+
+
+
+    <script>
+        // 在前后添加标签before after
+        // insertBefore
+        // $(".inner").after("<p>text</p>")
+        // $(".inner").html("")
+
+
+       // 把当前元素内容置空
+        // $(".inner").empty("")
+
+        // 把当前元素清除
+        // $(".inner").remove("")
+
+        // $("<div>jjjjjj</div>").replaceAll(".inner")
+        $("div.inner").replaceWith("<div>jjjjjj</div>")
+    </script>
+</body>
+
+</html>

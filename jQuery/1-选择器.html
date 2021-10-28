@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+    <div class="div1">
+        div1
+        <div class="div2">
+            div2
+            <div class="div3"> div3</div>
+        </div>
+    </div>
+    <div class="div4">div4</div>
+    <div class="div5">div5</div>
+    <script>
+        // $(".div1").css({ color: "red" });
+        // $("span").css({ color: "red" });
+
+        // span span 中间是 空格 为 子代的子代 也就是 后代选择器
+        // span>span 中间是 >为 亲子代选择器
+
+        // 空格选择后代
+        // $(".div1  .div3").css({ color: "red" })
+
+        // < 选择 子代元素
+        // $(".div1 < .div2").css({ color: "red" })
+
+        // +加号 表示 当前元素紧跟在 他后面的兄弟元素
+        // $(".div1 +.div4").css({ color: "red" })
+
+        // ~ 波浪线 表示选择 当前元素的 兄弟元素 
+        $(".div1 ~.div5").css({ color: "red" })
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <div class="box">hello</div>
+    <div class="text"> okokokok</div>
+    <div class="box">world</div>
+
+
+
+    <script>
+        // 在当前元素外面 添加标签
+        // 可以自定义 也可以添加 一样的 
+        //   $(".box").wrap("<div class='active'>")
+
+        // 在 所有相同的元素 外包裹一层所添加的div标签
+
+        // $(".box").wrapAll("<div class='active'>")
+
+        // 把当前元素内容 包裹
+        // $(".box").wrapInner("<div class='active'>")
+
+        // 在当前标签内 添加一个标签
+        // $(".box").append("<div>beautiful</div>")
+
+        // 把已有标签剪切 选择的标签内
+         //   追加 在当前元素内元素之后
+         // prepend 添加之前
+        // $(".box").append($(".text"))
+
+        //     克隆已有的元素
+        // 将其append到选择元素内
+        // var $text = $(".text").clone();
+        // $(".box").append($text)
+
+        // 把前面的元素添加到后面的元素里
+            // $("<div>吃饭了吗</div>").appendTo(".text")
+
+
+            // 相当于 innerhtml  可以传参修改
+            console.log($(".box").html("<div>aaaaaa</div>"));
+    </script>
+</body>
+
+</html>

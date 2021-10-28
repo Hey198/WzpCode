@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <!-- <input type="text">
+    <input type="text">
+    <input type="button" value="add">
+    <input type="checkbox">1sel
+    <input type="checkbox" checked>2
+    <input type="checkbox">3 -->
+
+    <select name="" id="sel">
+        <option value="hd">黑大</option>
+        <option value="lg">理工</option>
+        <option value="ld">林大</option>
+    </select>
+    <script>
+    // $(":input").val("hello")
+    // console.log($(":checkbox:checked"));
+    // console.log($("input:checked"));
+    $("#sel").change(function(){
+        console.log("hello");
+        console.log($("option:selected"));
+    })
+    </script>
+</body>
+
+</html>

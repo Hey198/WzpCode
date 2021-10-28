@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+    /* li:nth-child(3) {
+        color: red;
+    } */
+</style>
+
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li class="li1">c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+    </ul>
+    <!-- <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+     
+    </ul> -->
+    <script>
+        // eq控制的元素 是从0开始 进行选择
+        // nth-child 是从1开始 
+        // $("li:eq(3)").css({ color: "red" });
+
+        // 第一个元素 是0
+        // odd  奇数 even 偶数 
+        // $("li:even").css({ color: "red" });
+
+        // first last 只能选择第一个集合当中的 第一个li元素
+        // $("li:first").css({color:"red"});
+
+        // gt 大于    lt 小于
+        // $("li:gt(1)").css({ color: "red" });
+
+        // 括号内 不可以是索引  not 除了当前元素
+        $("li:not(.li1)").css({color:"red"});
+    </script>
+</body>
+
+</html>

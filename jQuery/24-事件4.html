@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+    }
+</style>
+<div id="box">
+    <input type="text" id="inp">
+</div>
+<div class="box2"></div>
+
+
+
+<body>
+
+    <script>
+        // hover 可以绑定两个事件
+        // 一个 移入事件 一个移出事件
+        $(".box2").hover(function () {
+            console.log("hello");
+        },function(){
+            console.log("world");
+        })
+    </script>
+</body>
+
+</html>

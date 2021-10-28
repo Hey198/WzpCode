@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <div id="one-text" class="a-1 aa">hello</div>
+    <div id="two-text" class="b-1 bb">world</div>
+    <div id="one-div" class="a11aa">divOne</div>
+    <script>
+        // $("#text-one,#div-one").css({
+        //     color: "red"
+        // })
+
+        //         属性选择器
+        // 以one开头 并且之后是-连接的
+        // $("[id|=one]").css({
+        //     color:"red"
+        // })
+
+        // *表示 当前id class 等包含的属性有a 
+        // 即可进行选择
+        // $("[class*=a]").css({
+        //     color:"red"
+        // })
+
+        // 有空格间隔的 属性中 一部分包含aa
+        // $("[class~=aa]").css({
+        //     color: "red"
+        // })
+            
+        // $ 以a 结尾的
+        $("[class$=a]").css({
+            color: "red"
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+<input type="text" id="inp">
+<select class="target">
+    <option value="option1" selected="selected">Option 1</option>
+    <option value="option2">Option 2</option>
+</select>
+<body>
+
+    <script>
+        // blur 失去焦点
+        // $("#inp").on("blur",function(){
+        //     console.log($(this).val());
+        // })
+
+        // 聚焦 捕获焦点
+        // $("#inp").on("focus",function(){
+        //     console.log("helllllllo");
+        // })
+        // $(".target").on("change",function(){
+        //     console.log($(this).val());
+        // })
+        // $("#inp").on("select",function(){
+        //     console.log("select");
+        // })
+        $("#inp").on("keyup",function(e){
+            if(e.keyCode==13){
+                  console.log("huiche");
+            }
+          
+        })
+    </script>
+</body>
+
+</html>

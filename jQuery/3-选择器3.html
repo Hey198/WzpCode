@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.js"></script>
+</head>
+<style>
+
+</style>
+
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li class="li1">c</li>
+        <li>d 你好世界</li>
+        <li>e</li>
+        <li>f</li>
+    </ul>
+   
+    <script>
+        // contains()括号内 必须是 字符串形式 
+        //     当前元素 包含的字符串 一部分被选中匹配 
+        //     即可生效
+        $("li:contains('你')").css({color:"red"});
+    </script>
+</body>
+
+</html>
