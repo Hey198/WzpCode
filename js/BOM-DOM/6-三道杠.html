@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 50px;
+            background-color: rgb(23, 134, 119);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var odiv = document.getElementsByTagName("div");
+        // var _width = 150;
+        // var _width1 = 150;
+        // var _width2 = 150;
+        // var begin = 150;
+        // var timer = 0;
+        // var timer2 = 0;
+        // var timer3 = 0;
+        // var timer4 = 0;
+        // var timer5 = 0;
+        // var timer6 = 0;
+        // var _width = 150;
+        // var begin = 150;
+        // var timer = [0, 1, 2,3,4,5,6,7,8,9,10,11];
+        // var _width = [0, 0, 0];
+        // for (i = 0; i < odiv.length; i++) {
+        //     var begin = 150;
+
+        //     odiv[i].index = i;
+        //     odiv[i].onmouseenter = function () {
+
+        //         var _this = this;
+        //         timer[this.index] = setInterval(function () {
+        //             _this.style.width = (_width[_this.index]++) + "px";
+        //         }, 10)
+        //         clearInterval(timer[_this.index + 5]);
+        //     }
+        //     var abc = _width;
+        //     odiv[i].onmouseleave = function () {
+        //         clearInterval(timer[this.index]);
+        //         var _this = this;
+        //         timer[this.index + 5] = setInterval(function () {
+        //             _this.style.width = (_width[_this.index]--) + "px";
+        //             if (_width[_this.index] <= begin) {
+        //                 clearInterval(timer[_this.index + 5]);
+        //             }
+        //         }, 10)
+
+        //     }
+
+        // }
+
+
+
+
+
+
+
+        // odiv[0].onmouseenter = function () {
+        //     var _this = this;
+        //     timer = setInterval(function () {
+        //         _this.style.width = (_width++) + "px";
+        //         console.log(timer);
+        //     }, 10)
+        //     clearInterval(timer2);
+        // }
+        // odiv[0].onmouseleave = function () {
+        //     clearInterval(timer);
+        //     var _this = this;
+        //     timer2 = setInterval(function () {
+        //         _this.style.width = (_width--) + "px";
+
+        //         console.log(timer2);
+        //         if (_width == begin) {
+        //             clearInterval(timer2);
+        //         }
+        //     }, 10)
+        // }
+        // odiv[1].onmouseenter = function () {
+        //     var _this = this;
+        //     timer3 = setInterval(function () {
+        //         _this.style.width = (_width1++) + "px";
+        //         console.log(timer3);
+        //     }, 10)
+        //     clearInterval(timer4);
+        // }
+        // odiv[1].onmouseleave = function () {
+        //     clearInterval(timer3);
+        //     var _this = this;
+        //     timer4 = setInterval(function () {
+        //         _this.style.width = (_width1--) + "px";
+        //         console.log(timer4);
+        //         if (_width1 == begin) {
+        //             clearInterval(timer4);
+        //         }
+        //     }, 10)
+
+        // }
+        // odiv[2].onmouseenter = function () {
+        //     var _this = this;
+        //     timer5 = setInterval(function () {
+        //         _this.style.width = (_width2++) + "px";
+        //         console.log(timer5);
+        //     }, 10)
+        //     clearInterval(timer6);
+        // }
+
+        // odiv[2].onmouseleave = function () {
+        //     clearInterval(timer5);
+        //     console.log(timer5);
+        //     var _this = this;
+        //     timer6 = setInterval(function () {
+        //         _this.style.width = (_width2--) + "px";
+        //         console.log(timer6);
+        //         if (_width2 == begin) {
+        //             clearInterval(timer6);
+        //         }
+        //     }, 10)
+
+        // }
+
+
+
+
+        var odiv = document.getElementsByTagName("div");
+        var width = [150, 150, 150];
+        var timer = [];
+        var timer2 = [];
+        for (var i = 0; i < odiv.length; i++) {
+            odiv[i].index = i;
+            odiv[i].onmouseenter = function () {
+                var _this = this;
+                timer[this.index] = setInterval(function () {
+                    _this.style.width = (width[_this.index]++) + "px";
+                    clearInterval(timer2[_this.index])
+                }, 1)
+            }
+            odiv[i].onmouseleave = function () {
+                var _this = this;
+                clearInterval(timer[this.index]);
+                timer2[this.index] = setInterval(function () {
+                    _this.style.width = (width[_this.index]--) + "px";
+                    if (width[_this.index] == 150) {
+                        clearInterval(timer2[_this.index]);
+                    }
+                }, 1)
+            }
+        }
+
+    </script>
+</body>
+
+</html>

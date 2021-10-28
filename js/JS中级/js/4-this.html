@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //在函数中 定义 的变量 var a=0 为 局部变量
+        // 在函数中赋值 则为 全局变量
+
+        //变量提升 预加载时 将 var a；
+        console.log(a);
+        var a = 0;
+
+        // 相当于 
+        var a;
+        console.log(a);
+        a = 0;
+
+        //函数提升
+        foo()
+        function foo() {
+            console.log("abc");
+        }
+    </script>
+</body>
+
+</html> 

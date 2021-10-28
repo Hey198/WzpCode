@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* *{
+        margin: 0;
+        padding: 0;
+    } */
+    li {
+        list-style: none;
+    }
+
+    div {
+        height: 500px;
+        width: 1000px;
+        border: 5px solid rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+
+    div img {
+        width: 1000px;
+        height: 500px;
+        display: none;
+    }
+
+    div li {
+        width: 20px;
+        height: 20px;
+        border-radius: 10px;
+        border: 1px solid black;
+        background-color: rgba(57, 33, 163, 0.274);
+        text-align: center;
+        float: left;
+
+        margin-right: 10px;
+    }
+
+    div .ul1 {
+
+        position: absolute;
+        top: 400px;
+        left: 800px;
+
+    }
+
+    div .ul2 {
+        position: absolute;
+        top: 400px;
+        left: 50px;
+
+    }
+
+    div .active {
+        display: block;
+    }
+
+    div .ul1 li.chan {
+        background-color: #000;
+        color: blanchedalmond;
+
+    }
+
+    div .ul2 li.chan {
+        background-color: #000;
+        color: blanchedalmond;
+
+    }
+</style>
+
+<body>
+    <div>
+        <img class="active" src="img/小米游戏本_wallpaper_03_1080P.jpg">
+        <img src="img/小米游戏本_wallpaper_02_4K.jpg">
+        <img src="img/小米游戏本_wallpaper_01_1080P.jpg">
+        <img src="img/4K123简约 (8).jpg">
+        <img src="img/wallhaven-ymzyvg.jpg">
+
+        <ul class="ul1">
+
+            <li class="chan">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul class="ul2">
+            <li class="">&lt
+            </li>
+            <li>&gt</li>
+
+        </ul>
+    </div>
+    <script>
+        var odiv = document.getElementsByTagName("div");
+        var oimg = document.getElementsByTagName("img");
+        var oul1 = document.getElementsByClassName("ul1")[0].getElementsByTagName("li");
+        var oul2 = document.getElementsByClassName("ul2")[0].getElementsByTagName("li");
+        var newindex = 0;
+        for (var i = 0; i < oimg.length; i++) {
+            oul1[i].index = i;
+            console.log(oul1[0].index);
+            oul1[i].onmouseenter = function () {
+                for (var j = 0; j < oimg.length; j++) {
+                    oimg[j].className = "";
+                    oul1[j].className = "";
+                }
+                oimg[this.index].className = "active";
+                oul1[this.index].className = "chan";
+                console.log(newindex);
+                newindex = this.index;
+            }
+
+        }
+
+        var timer = 0;
+
+        timer = setInterval(function () {
+            for (b = 0; b < 5; b++) {
+                oimg[b].className = "";
+                oul1[b].className = "";
+            }
+            oimg[newindex].className = "active";
+            oul1[newindex].className = "chan";
+            newindex++;
+            if (newindex == 5) {
+                newindex = 0;
+            }
+        }, 1000)
+
+        console.log(timer);
+        odiv[0].onmouseenter = function () {
+            clearInterval(timer);
+            console.log(timer);
+        }
+
+        odiv[0].onmouseleave = function () {
+
+            timer = setInterval(function () {
+                for (b = 0; b < 5; b++) {
+                    oimg[b].className = "";
+                    oul1[b].className = "";
+                }
+                for (var m = 0; m < oul2.length; m++) {
+                    oul2[m].className = "";
+
+                }
+                oimg[newindex].className = "active";
+                oul1[newindex].className = "chan";
+                newindex++;
+                if (newindex == 5) {
+                    newindex = 0;
+                }
+            }, 1000)
+            console.log(timer);
+        }
+        oul2[0].onclick = function () {
+            newindex--;
+            if (newindex == -1) {
+                newindex = 4;
+            }
+            for (var m = 0; m < oul2.length; m++) {
+                oul2[m].className = "";
+
+            }
+            for (var d = 0; d < oimg.length; d++) {
+                oimg[d].className = "";
+                oul1[d].className = "";
+            }
+            var d = 4;
+            oimg[newindex].className = "active";
+            oul1[newindex].className = "chan";
+            oul2[0].className = "chan";
+
+
+        }
+        oul2[1].onclick = function () {
+            for (var m = 0; m < oul2.length; m++) {
+                oul2[m].className = "";
+
+            }
+            for (var d = 0; d < oimg.length; d++) {
+                oimg[d].className = "";
+                oul1[d].className = "";
+            }
+            var d = 4;
+            oimg[newindex].className = "active";
+            oul1[newindex].className = "chan";
+            oul2[1].className = "chan";
+            newindex++;
+            if (newindex == 5) {
+                newindex = 0;
+            }
+        }
+    </script>
+</body>
+
+</html>

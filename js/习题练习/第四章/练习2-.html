@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 2.	编写程序，根据用户输入的一个数字(0~6)．
+    通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)。 -->
+    <script>
+    var date=["星期日","星期二","星期二","星期三","星期四","星期五","星期六"];
+        var num = window.prompt("请输入数字");
+        num=parseInt(num);
+        switch(num)
+        {
+            case 0:window.confirm(date[0]);break;
+            case 1:window.confirm(date[1]);break;
+            case 2:window.confirm(date[2]);break;
+            case 3:window.confirm(date[3]);break;
+            case 4:window.confirm(date[4]);break;
+            case 5:window.confirm(date[5]);break;
+            case 6:window.confirm(date[6]);break;
+            default:window.confirm("输入错误")
+        }
+        
+
+    </script>
+
+
+</body>
+</html>

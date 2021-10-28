@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul id="box">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+    </div>
+    <script>
+        //  事件监听 先捕获 后冒泡（从里向外）
+
+        // 事件委托
+        //    odiv. addEventListener("click",function(e){
+        //     e.target.innertext
+        //     }  true捕获 or false 冒泡   )
+        // var oUl=document.getElementsByTagName("ul");
+        var oUl = document.getElementById("box")
+        console.log(oUl);
+        oUl.addEventListener("click", function (e) {
+            console.log(e);
+        });
+
+        function foo() {
+
+        }
+        foo()
+        var foo = function () {
+
+        }
+        foo()
+
+            // 立即执行函数
+            (function () {
+                console.log(123);
+            })()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 3.	编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘)。 -->
+    <script>
+        // var mul=1;
+        // for(i=10;i>=1;i--)
+        // {
+        //      mul*=i;
+
+        // }
+        // console.log(mul);
+        // 4
+        //         var mul=1;
+        //     var num=0;
+        //         for(i=1;i<=10;i++ ){
+        //             for(j=1;j<=i;j++)
+        //             {
+        //                 mul*=j
+        //             }
+        //             num+=mul;
+        //              num=1；
+        //         }
+        //         console.log(num);
+
+        // 5
+        //         for(var i=1;i<=5;i++)
+        //         {
+        //             for(var j=1;j<=i;j++)
+        //             {
+        //                 document.write(j+"&nbsp;");
+        //             }
+        //             document.write("</br>");
+        //         }
+        // 6
+        for (i = 1; i <= 5; i++) {
+            for (j = 5 - i; j >= 1; j--) {
+                document.write( "&nbsp;");
+            }
+            for (n = 1; n<= i; n++) {
+                document.write(  "*"+"&nbsp;"  );
+            }
+
+            document.write("</br>");
+        }
+
+       // 7
+        //7.	有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数。
+
+        // for(i=100;i<=999;i++){
+        //     if(i%4 == 2 && i%7 == 3 && i%9 == 5 ){
+        //         document.write( i );
+        //     document.write("</br>");
+        //     }
+
+        // }
+        //8
+        // for(var i=1000;i<=9999;i++){
+        //     var A=Math.floor(i/1000);
+        //     var B=Math.floor(i/100)%10;
+        //     var C=Math.floor(i/100)%10;
+        //     if(i%13==0&&A==B+C )
+        //     document.write( i );
+        //document.write("</br>");
+        // console.log(A);
+        // console.log(B);
+        // console.log(C);
+        // for (var i = 1000; i <= 9999; i++) {
+        //     var C = Math.floor(i / 10) % 10;
+        //     var B = Math.floor(i / 100) % 10;
+        //     var A = Math.floor(i / 1000);
+        //     if (i % 13 == 0 && C + B == A) {
+
+
+        //         document.write(i + "</br>");
+        //         // document.write("</br>");
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>

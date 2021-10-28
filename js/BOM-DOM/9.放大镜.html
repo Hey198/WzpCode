@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+    }
+
+    div {
+        width: 400px;
+        height: 400px;
+    }
+
+    .div1 .img1 {
+        width: 400px;
+        height: 400px;
+        margin: 0;
+        position: relative;
+    }
+
+    .div2 .img2 {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+    }
+
+    .div2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 450px;
+        overflow: hidden;
+    }
+
+    div .content {
+        width: 200px;
+        height:200px;
+        background-color: rgba(88, 67, 72, 0.966);
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+</style>
+
+<body>
+    <div class="div1">
+        <img class="img1" src="img/wallhaven-ymzyvg.jpg">
+        <div class="content"></div>
+    </div>
+    <div class="div2">
+        <img class="img2" src="img/wallhaven-ymzyvg.jpg">
+    </div>
+    <script>
+        var oDiv = document.getElementsByTagName("div");
+        var oCont = document.getElementsByClassName("content");
+        var oImg = document.getElementsByClassName("img1");
+        var oImg2 = document.getElementsByClassName("img2");
+        oDiv[0].onmousemove = function (e) {
+            var _left= e.clientX - 100;
+            var _top = e.clientY - 100;
+              if(_left<=0)
+              {
+                _left=0;
+              }
+              if(_top>=200){
+                  _top=200;
+              }
+              if(_left>=200){
+                  _left=200;
+              }
+              if(_top<=0){
+                  _top=0;
+              }
+            oDiv[1].style.left = _left + "px";
+            oDiv[1].style.top = _top + "px";
+             oImg2[0].style.top = -2 * _top +"px";
+             oImg2[0].style.left = -2*_left + "px";
+
+        }
+
+    </script>
+</body>
+
+</html>

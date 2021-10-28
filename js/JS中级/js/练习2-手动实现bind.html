@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        Function.prototype.bind2 = function (str) {
+            //arguments 可以获取 当前函数的参数
+
+            // bind2由foo调用 this 即为foo函数
+            console.log(this);
+            //所传参数str为 obj对象
+            console.log(str);
+            var _this = this;
+            return function () {
+                _this.apply(str);
+            }
+        }
+        function foo() {
+            console.log(this.name);
+        }
+        var obj = {
+            name: "xiaoming"
+        }
+        var foo2 = foo.bind2(obj);
+        foo2();
+
+
+        //实现 可以传参方法
+        Function.prototype.bind2 = function () {
+            //arguments 可以获取 当前函数的参数 伪数组
+            // Array.isArray(arguments)判断是否是一个数组
+
+            //将类数组 转化为 数组
+            var thisPra = Array.prototype.splice.call(arguments, 1);
+            var _this = this;
+            var thisObj = arguments[0];
+            return function () {
+                _this.apply(thisObj, thisPra);
+            }
+        }
+        function foo(str) {
+            console.log(this.name + str);
+        }
+        var obj = {
+            name: "xiaoming"
+        }
+        var foo2 = foo.bind2(obj, 1, "xiaonnub", "小明");
+        foo2();
+
+    </script>
+</body>
+
+</html>

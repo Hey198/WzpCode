@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .content {
+
+        width: 1600px;
+        height: 800px;
+        border: 1px solid black;
+        /* margin-top: 100px; */
+        margin: 0 auto;
+    }
+
+    .content .div1 {
+        width: 1600px;
+        height: 400px;
+        border-bottom: 1px solid #000;
+    }
+
+    .content .div2,
+    .content .div3,
+    .content .div4 {
+        width: 400px;
+        height: 400px;
+        border-right: 1px solid black;
+        float: left;
+
+    }
+
+    .content .div5 {
+        width: 392px;
+        height: 400px;
+
+        float: left;
+    }
+
+    img {
+        width: 350px;
+        height: 300px;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+
+    .show {
+        width: 500px;
+        height: 300px;
+        margin-left: 400px;
+    }
+</style>
+
+<body>
+
+
+    <div class="content">
+        <div class="div1">
+            <img class="show" src="img/MiBook Pro_wallpaper_02.JPG.JPG">
+        </div>
+        <div class="div2"> <img class="img0" src="img/MiBook Pro_wallpaper_02.JPG.JPG"></div>
+        <div class="div3"> <img class="img0" src="img/03848_frozenreservoir_6400x4000.jpg.JPG"></div>
+        <div class="div4"> <img class="img0" src="img/小米游戏本_wallpaper_01_1080P.jpg"></div>
+        <div class="div5"> <img class="img0" src="img/小米游戏本_wallpaper_03_1080P.jpg"></div>
+
+
+    </div>
+    <script>
+        var odiv = document.getElementsByClassName("img0");
+        var oimg = document.getElementsByClassName("show");
+        console.log(odiv);
+        // odiv[2].onmouseenter = function(){
+        //     oimg[0].setAttribute("src","img/MiBook Pro_wallpaper_02.JPG.JPG")
+
+        // }
+        // odiv[3].onmouseenter = function(){
+        //     oimg[0].setAttribute("src","img/03848_frozenreservoir_6400x4000.jpg.JPG")
+
+        // }
+        // odiv[4].onmouseenter = function(){
+        //     oimg[0].setAttribute("src","img/小米游戏本_wallpaper_01_1080P.jpg")
+
+        // }
+        // odiv[5].onmouseenter = function(){
+        //     oimg[0].setAttribute("src","img/小米游戏本_wallpaper_03_1080P.jpg")
+
+        // }
+        // odiv[i].setAttribute("src")
+        for (i = 0; i < 4; i++) {
+            odiv[i].onmouseenter = function () {
+                oimg[0].setAttribute("src", this.getAttribute("src"));
+
+            }
+        }
+        // document.getElementById()
+        // console.log();
+        // odiv[2].onclick = function () {
+        //     oimg[0].setAttribute("src", "img/MiBook Pro_wallpaper_02.JPG.JPG")
+        // }
+        // odiv[3].onclick = function () {
+        //     oimg[0].setAttribute("src", "img/03848_frozenreservoir_6400x4000.jpg.JPG")
+        // }
+        // odiv[4].onclick = function () {
+        //     oimg[0].setAttribute("src", "img/小米游戏本_wallpaper_01_1080P.jpg")
+        // }
+        // odiv[5].onclick = function () {
+        //     oimg[0].setAttribute("src", "img/小米游戏本_wallpaper_03_1080P.jpg")
+        // }
+
+    </script>
+</body>
+
+
+</html>

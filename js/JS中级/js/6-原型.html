@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = 1;
+        var str = "hello";
+        // zai string原型下构造一个自定义方法 fellow方法
+        String.prototype.fellow = function () {
+            console.log("fellow1okokokok");
+        }
+        // 实例化对象str num等等都是由 number String等具体的对象 原型构造出来
+        str.fellow();
+        //通过 所构造出来的 str变量的原型
+        console.log(str.__proto__);
+        //string 查看 原型下面的方法 prototype
+        console.log(Function.prototype);
+        //判断 num  通过谁所构造而来所属于的原型 num.constructor
+        console.log(num.constructor == Number);
+    </script>
+</body>
+
+</html>

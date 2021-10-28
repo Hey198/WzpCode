@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="idiv"> <span>div1</span><button class="up">向上</button><button class="down">向下</button></div>
+        <div class="idiv"> <span>div2</span><button class="up">向上</button><button class="down">向下</button></div>
+        <div class="idiv"> <span>div3</span><button class="up">向上</button><button class="down">向下</button></div>
+    </div>
+    <script>
+        var oParent = document.querySelector(".parent");
+        var oDiv = document.querySelectorAll(".idiv");
+        var oBut = document.querySelectorAll(".up");
+        var oBut2 = document.querySelectorAll(".down");
+        console.log(oDiv[0].previousElementSibling);
+        console.log(oDiv[1].previousElementSibling);
+        for (var i = 0; i < oDiv.length; i++) {
+            oBut[i].index=i;
+            oBut2[i].index2=i
+            oBut[i].onclick = function () {
+                console.log(this.index);
+                console.log(oDiv[this.index].previousElementSibling);
+                if (oDiv[this.index].previousElementSibling != null) {
+                    oParent.insertBefore(oDiv[this.index], oDiv[this.index].previousElementSibling)
+                }
+                else {
+                    console.log("无法继续向上");
+                }
+            }
+            oBut2[i].onclick = function () {
+                if (oDiv[this.index2].nextElementSibling != null) {
+                    oParent.insertBefore(oDiv[this.index2].nextElementSibling, oDiv[this.index2])
+                }
+                else {
+                    console.log("无法继续向下");
+                }
+            }
+
+        }
+                // for (var i = 0; i < oDiv.length; i++) {
+                //     oBut[i].onclick = function () {
+                //         var parent = this.parentElement;
+                //         var preParent = parent.previousElementSibling;
+                //         if (preParent != null) {
+                //             oParent.insertBefore(parent, preParent);
+                //         }
+                //         else {
+                //             console.log("无法继续向上");
+                //         }
+                //     }
+                //     oBut2[i].onclick = function () {
+                //         var parent = this.parentElement;
+                //         var nextParent = parent.nextElementSibling;
+                //         if (parent != null) {
+                //             oParent.insertBefore(nextParent, parent)
+                //         }
+                //         else {
+                //             console.log("无法继续向下");
+                //         }
+                //     }
+
+                // }
+    </script>
+</body>
+
+</html>

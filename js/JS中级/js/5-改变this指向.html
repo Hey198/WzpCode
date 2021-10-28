@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var name = "123";
+        function foo(str) {
+            console.log(str+this.name);
+        }
+        var obj = {
+            name: "abc"
+        }
+        foo("hello");
+
+        // call apply bind
+        //三种改变this 指向
+
+        // call 后面可以传多个参数
+        foo.call(obj,"hello");
+
+        //apply 只能传两个参数  第二个可用数组
+        foo.apply(obj,["hello","fellow"])
+
+        //bind 绑定this 并且传参 不立即执行
+        // 不可以 同一个函数 多次使用bind  只会识别 第一次bind 改变this
+        foo.bind(obj,"hello","fellow")
+
+        var foo2=foo.bind(obj,"hello","fellow")
+
+        foo2();
+
+        //函数式编程
+        //将函数 当作 返回值 传参 进行调用
+
+
+    function add(c,d){
+        return this.a+this.b+c+d;
+    }
+  
+    </script>
+</body>
+
+</html>

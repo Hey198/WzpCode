@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #di {
+        width: 200px;
+        height: 30px;
+        border: 1px solid;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    button {
+        background-color: burlywood;
+        color: #fff;
+    }
+
+    #bgc {
+        height: 30px;
+        width: 0px;
+        background-color: rgb(122, 104, 104);
+        margin-top: -20px;
+    }
+</style>
+
+<body>
+
+    <div id="di">
+        <span id="idd">0%</span>
+        <div id="bgc">
+        </div>
+    </div>
+    <button id="butt">开始</button>
+    <script>
+        var i = 0;
+        var obutt = document.getElementById("butt");
+        var ospan = document.getElementById("idd");
+        var obgc = document.getElementById("bgc")
+        obutt.onclick = function () {
+            timer = setInterval(function () {
+                if (obgc.offsetWidth >= 200) {
+                    clearInterval(timer);
+                }
+                else {
+                    ospan.innerText = (i++) + "%";
+                    obgc.style.width =( obgc.offsetWidth+2 )+ "px";
+                }
+
+            }, 16)
+
+        }
+
+    </script>
+</body>
+
+</html>

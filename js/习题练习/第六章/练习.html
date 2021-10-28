@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+         var today= new Date();
+        window.confirm(today);
+
+        //.	编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+        //它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+        //例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。1l12l3
+        var s = window.prompt("请输入字符串");
+
+        var sln = s.Length;
+        var i = 0;
+        var ary = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+        function collectdigits() {
+            for (i = 0; i < 9; i++) {
+                for (j = 0; j < sln; j++) {
+                   j= s.indexOf(ary[i], j);
+                    if (s.indexOf(ary[i], j) == -1) {
+                        break;
+                    }
+                    else {
+                       document.write(s.charAt(j));
+                    }
+
+
+
+
+                }
+
+            }
+        }collectdigits()
+
+    </script>
+</body>
+
+</html>

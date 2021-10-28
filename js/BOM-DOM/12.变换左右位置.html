@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    select {
+        width: 100px;
+        height: 200px;
+        overflow: hidden;
+        margin-left: 30px;
+        margin-top: 70px;
+    }
+
+    option {
+        margin-top: 5px;
+    }
+
+    button {
+        height: 20px;
+    }
+
+    .but1,
+    .but3 {
+        margin-right: 15px;
+    }
+
+    .div1,
+    .div2 {
+        margin-left: 30px;
+    }
+</style>
+
+<body>
+    <select class="sel1" multiple name="" id="sel11">
+        <option value="1">选项一</option>
+        <option value="2">选项二</option>
+        <option value="3">选项三</option>
+        <option value="4">选项四</option>
+        <option value="5">选项五</option>
+        <option value="6">选项六</option>
+    </select>
+    <select multiple class="sel2" size="7">
+        <option value="7">选项七</option>
+    </select>
+    <div class="div1">
+        <button class="but1">选中添加到右边&gt;&gt;</button>
+        <button class="but2">选中添加到左边&lt;&lt;</button>
+    </div>
+    <div class="div2">
+        <button class="but3">全部添加到右边&gt;&gt;</button>
+        <button class="but4">全部添加到左边&lt;&lt;</button>
+    </div>
+    <script>
+        var oSel1 = document.querySelector(".sel1");
+        var oSel2 = document.querySelector(".sel2");
+        var oBut = document.querySelectorAll("button");
+        var oOptions = document.querySelectorAll("option");
+        // insertAdjacentHTML添加html
+        // innerHTML""引号中必须是 字符串格式 不可以是 提取出来的对象形式
+        //  var opp = this.options[sel1opIndex].innerHTML;可以将对象 变为字符串格式
+
+        // 选中添加到右边
+        oSel1.onchange = function () {
+            var chan = [];
+            for (var i = 0; i < oSel1.length; i++) {
+                if (this.options[i].selected) {
+                    chan.push(this.options[i]);
+                }
+            }
+            oBut[0].onclick = function () {
+                for (var j = 0; j < chan.length; j++) {
+                    oSel2.append(chan[j]);
+                }
+            }
+        }
+        // 选中添加到左边    
+        oSel2.onchange = function () {
+            var chan = [];
+            for (var i = 0; i < oSel2.length; i++) {
+                if (this.options[i].selected) {
+                    chan.push(this.options[i]);
+                }
+            }
+            oBut[1].onclick = function () {
+                for (var j = 0; j < chan.length; j++) {
+                    oSel1.append(chan[j]);
+                }
+            }
+        }
+        // 全部添加到右边
+        oBut[2].onclick = function () {
+            var chan = [];
+            for (var i = 0; i < oSel1.length; i++) {
+                chan.push(oSel1.options[i])
+            }
+            // console.log(chan);
+            for (var j = 0; j < chan.length; j++) {
+                oSel2.append(chan[j]);
+            }
+        }
+        // 全部添加到左边
+        oBut[3].onclick = function () {
+            var chan = [];
+            for (var i = 0; i < oSel2.length; i++) {
+                chan.push(oSel2.options[i])
+            }
+            for (var j = 0; j < chan.length; j++) {
+                oSel1.append(chan[j]);
+            }
+
+        }
+        // 双击转移
+        for (var a = 0; a < oOptions.length; a++) {
+            console.log(oOptions[a]);
+           oOptions[a].ondblclick = function () {
+                if (this.parentNode.className == "sel1") {
+                    oSel2.append(this);
+                }
+                else{
+                    oSel1.append(this);
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

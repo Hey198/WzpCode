@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //var today = new Date();   //获取当天日期
+        //var year = today.getFullYear();   //获取当天年份
+        var year=window.prompt("请输入年分")
+        // prompt 收集的数字为字符串
+        year=parseInt(year);
+        if((year%4==0&&year%100!=0)||year%400==0){
+            window.confirm("这一年是闰年");
+        }
+        else
+        window.confirm("这一年是平年");
+        //果某年的年份值是4的倍数并且不是100的倍数，或者该年份值是400的倍数，
+    
+
+    </script>
+</body>
+
+</html>
