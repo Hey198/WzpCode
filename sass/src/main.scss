@@ -1,0 +1,166 @@
+// sass ./src/main.scss:./dist/main.css --watch --style expanded
+//同步转换
+$maincolor:red;
+#div1{
+    background-color: $maincolor;
+}
+#box{
+    color: $maincolor;
+}
+$maincolor:red;
+#div1{
+    background-color: $maincolor;
+}
+//选择器嵌套
+#box{
+    color: $maincolor;
+}
+#box{
+    color: red;
+    #box2{
+        font-size: 12px;
+    }
+    &:hover{
+        background-color: red;
+    }
+    &-heaer{
+        font-size: 10px;
+    }
+}
+#box:hover{
+    color: red;
+}
+
+//@mixin 封装 @include引用
+// @mixin foo {
+//     width: 200px;
+//     height: 200px;
+//     background-color: red;
+// }
+
+//也可以传递参进行调用
+@mixin foo($num,$col:blue) {
+    width: $num;
+    height:$num;
+    background-color: $col;
+}
+// #div3{
+//     @include foo($num：200px, $col：red);
+// }
+
+#div4{
+    @include foo(400px,blue)
+}
+
+//@extend 继承一个标签的编辑效果
+#div5{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+}
+#div6{
+    @extend #div5;
+    font-size: 10px;
+}
+
+
+//引入 另一个文件中的css
+@import "./base";
+
+
+//可以进行简单的运算
+#div7{
+    //width: 200px + 100px;
+//除法 css 中/ font 
+    width: (100px/10);
+// font-sizedaxiao /line-height
+// font: 20px/20px;
+height: abs(-100px);
+
+}
+
+//百分比   字符串
+$imgname:"xx.jpg";
+#div8{
+    width: percentage(80/1000);
+    background-image: url("./img/"+$imgname);    
+    // 大小写 to-lower-case()
+    background-image: url("./img/"+to-upper-case( $imgname));    
+}
+//sass -i 开始另一个控制台进行调试
+// str-insert("hello","aa",2)
+// "haaello"
+// str-index("hello","h")
+//1
+// 调整颜色
+$textcolor:rgb(255,255,0);
+#div9{
+    // color: rgb(255,255,255);
+    // background-color: lighten($textcolor,10%);
+    // color: darken($textcolor,10%);
+    color: opacify($textcolor, 0.3);
+    background-color: transparentize($textcolor,0.3);
+}
+
+
+//列表
+$textlist:(1px solid black);
+$textlist2:red black blue;
+#div10{
+    border:$textlist;
+    color: nth($textlist2,2);
+}
+
+//map
+$m:(color:red,font-size:30px);
+#div11{
+    color:map-get($m,color);
+}
+
+//引用变量 #{$}
+$testtext:"hello";
+$testtext2:"hello";
+$testtext3:"#div13";
+/* #{$testtext}*/
+#{$testtext3}{
+    color: red;
+}
+
+//判断数据类型
+//type-of()
+
+//定义function
+@function foo($num){
+    @if(num==1){
+        @return red;
+    }@else if(num==2){
+        @return blue;
+    }@else{
+        @return black;
+    }
+}
+#div14{
+    color:foo(2);
+}
+
+//循环 through 包含10 //to 到10之前
+@for $i from 1 through 10{
+    #test-#{$i}{
+        width: $i*100px;
+    }
+}
+
+$testlist3:red blue green black;
+@each $var in $testlist3{
+    #test-#{$var}{
+        color:$var;
+    }
+}
+$j:1;
+@while $j<10 {
+    #span-#{$j}{
+        width: $j*10px;
+    }
+    $j:$j+1;
+    
+}
