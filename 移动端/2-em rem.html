@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 父元素设置 fontsize 之后 子元素 可以继承 如果 单独改变 需要 单独设置 子元素的 fontsize */
+    .box {
+        font-size: 100px;
+    }
+
+    .div1 {
+
+        /* em单位相对于 离自己最近的fontsize 是其倍数关系
+        如果没有设置 fontsize 就 按照 html 原始大小; */
+        font-size: 10px;
+        height: 5em;
+        width: 5em;
+        background-color: rgba(233, 103, 120, 0.568);
+    }
+    /* chrome 默认文字大小16px     最小是12px
+    如果实现 6px 大小可以使用 transform scale 进行缩放
+
+    rem 单位 为根元素html的fontsize  */
+
+    /* 有内容进行缩放 使用rem em 
+    一般有rem 库 动态获取当前页面大小发生变化  获取 fontsize 大小 */
+    html {
+        font-size: 20px;
+    }
+
+    .div2 {
+        width: 10rem;
+        /* root 根元素 */
+        height: 10rem;
+        background-color: rgb(112, 218, 93);
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="div1">hello</div>
+        <div class="div2"> world </div>
+    </div>
+</body>
+
+</html>

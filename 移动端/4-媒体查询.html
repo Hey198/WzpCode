@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 300px;
+        height: 300px;
+        background-color: rgb(66, 99, 175);
+    }
+
+    /* @media(max-width:500px) {
+        .box {
+            background-color: black;
+        }
+
+    } */
+
+    /* 媒体查询 逻辑表达式   and前后必须有空格*/
+    /* @media (min-width:500px) and (max-width:1000px) {
+        .box {
+            background-color: rgb(71, 133, 104);
+        }
+    } */
+    /* 在移动端监听横屏竖屏 */
+
+    /* 竖屏 */
+    @media(orientation:portrait) {
+        .box {
+            background-color: rgb(92, 45, 45);
+        }
+    }
+
+    /* 横屏 */
+    @media(orientation:landscape) {
+        .box {
+            background-color: rgb(165, 49, 93);
+        }
+    }
+
+    /* 监听DPR */
+    @media(-webkit-device-piexl-ratio:2) {
+        .box {
+            width: 100px;
+        }
+    }
+
+    @media(-webkit-device-piexl-ratio:2) {
+        .box {
+            width: 200px;
+        }
+    }
+</style>
+<body>
+    <div class="box"></div>
+</body>
+</html>

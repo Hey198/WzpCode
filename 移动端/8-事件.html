@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+    .box {
+        width: 400px;
+        height: 400px;
+        background-color: green;
+    }
+</style>
+
+<body>
+    <div class="box">
+    </div>
+    <script>
+        var oBox = document.getElementsByClassName("box");
+        oBox[0].addEventListener("click", function () {
+            console.log("click");
+        })
+        // click 事件会有大约300ms延迟 系统等待是否 会有 双击操作进行 
+        // 所以 touchstart 比 click 先执行
+        oBox[0].addEventListener("touchstart", function () {
+            console.log("touchstart");
+        })
+        oBox[0].addEventListener("touchmove", function () {
+            console.log("touchmove");
+        })
+        oBox[0].addEventListener("touchend", function () {
+            console.log("touchend");
+        })
+    </script>
+</body>
+
+</html>
