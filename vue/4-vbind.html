@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        .test1{
+            color: red;
+        }
+        .test2{
+            color: blue;
+        }
+        .active{
+            color: green;
+            font-size: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <!-- <h1 :class="cname">hello</h1>
+        <img v-bind:src="srci+'1.jpg'">
+        <h1>world</h1> -->
+        <!-- <h1 v-bind:class="isActive?'active':''">hello</h1> -->
+        <h1 v-bind:class="isActive?'active':''">hello</h1>
+        <!-- <h1 v-bind:class="{'active':isActive}">hello</h1> -->
+        <h1 v-bind:class="['active','test1']">hello</h1>
+        <h1 class="aaa" v-bind:class="isActive?'active':''">你好</h1>
+        
+    </div>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+               cname:"test1",
+               isActive:true,
+               srci:"../css3/image/"
+            }
+        })
+    </script>
+</body>
+</html>

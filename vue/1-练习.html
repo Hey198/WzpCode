@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <!-- jquery -->
+    <script src="./js/jquery-3.6.0.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <script src="./js/vue.js"></script>
+
+    <style>
+        .container {
+            padding-top: 100px;
+        }
+
+        .form-inline {
+            margin-bottom: 20px;
+        }
+
+        .active {
+            background-color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container" id="app">
+        <form class="form-inline">
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" v-model="searchtext" class="form-control" id="exampleInputAmount"
+                        placeholder="搜索名称">
+                </div>
+            </div>
+            <button type="button" class="btn btn-primary" v-on:click="searchhandle">搜索</button>
+        </form>
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputName2">商品名称</label>
+                <input type="text" class="form-control" id="exampleInputName2" v-model="goodsName"
+                    placeholder="请输入商品名称">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail2">商品价格</label>
+                <input type="email" class="form-control" id="exampleInputEmail2" v-model="goodsPrice"
+                    placeholder="请输入商品价格">
+            </div>
+            <button type="button" class="btn btn-default" @click="addHandle">添加</button>
+        </form>
+        <div>
+
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>商品名称</th>
+                        <th>商品价格</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr :class="{active:val.ischeck}" @click="checkhandle(val.id)" v-for="val in goodlist">
+                        <th scope="row">
+                            <input type="checkbox" v-bind:checked="val.ischeck" name="goods">
+                        </th>
+                        <td>{{val.name}}</td>
+                        <td>{{val.price}}</td>
+                        <td><button type="button" @click.stop="singleDel(val.id)"
+                                class="btn btn-primary btn-xs">删除</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">总价</td>
+                        <td> {{priceSum}}</td>
+                        <td><button type="button" v-on:click="checkDel"
+                                class="btn btn-primary btn-xs">删除选中</button></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <body>
+
+        <script>
+            new Vue({
+                el: "#app",
+                data: {
+                    //v-model等指向的属性data中需要存在
+                    //在data中需要定义出来
+                    searchtext: "",
+                    goodsName: "",
+                    goodsPrice: "",
+                    goodlist: [
+                        {
+                            id: 1001,
+                            name: "衣服",
+                            price: 12,
+                            ischeck: false
+                        },
+                        {
+                            id: 1002,
+                            name: "裤子",
+                            price: 9870,
+                            ischeck: false
+                        },
+                        {
+                            id: 1003,
+                            name: "鞋",
+                            price: 900,
+                            ischeck: false
+                        },
+                        {
+                            id: 1004,
+                            name: "帽子",
+                            price: 1010,
+                            ischeck: false
+                        }
+
+                    ]
+                },
+                methods: {
+                    // 搜索内容
+                    searchhandle() {
+                        let text = this.searchtext;
+                        let newlist = [];
+                        newlist = this.goodlist.filter(function (val) {
+                            if (val.name.includes(text)) {
+                                return val;
+                            }
+                        })
+                        this.goodlist = newlist;
+                    },
+
+                    //添加内容
+                    addHandle() {
+                        let goodsObj = {
+                            name: this.goodsName,
+
+                            price: this.goodsPrice,
+                            id: this.goodlist.length + 1001,
+                        }
+                        this.goodlist.push(goodsObj);
+                    },
+                    //内容选中
+
+                    //接收所选中的id
+                    checkhandle(id) {
+                        let newlist = [];
+                        newlist = this.goodlist.map(function (val) {
+                            if (id == val.id) {
+                                val.ischeck = !val.ischeck
+                            }
+                            return val;
+                        })
+                        this.goodlist = newlist;
+                    },
+
+                    //单行删除
+                    singleDel(id) {
+
+                        //两次点击事件分别触发选中和删除
+                        //利用.stop 阻止冒泡
+                        let newList = [];
+                        newList = this.goodlist.filter(function (val) {
+                            if (val.id != id)
+                                return val;
+                        })
+                        this.goodlist = newList;
+                    },
+                    //选中删除
+                    checkDel() {
+                        let newList = [];
+                        newList = this.goodlist.filter(function (val) {
+                            if (!val.ischeck)
+                                return val;
+                        })
+                        this.goodlist = newList
+                    }
+
+
+
+                },
+                //计算属性
+                //当前属性和有变化的属性有关联时 才会发生改变
+                //需要有返回值
+                computed: {
+
+                    priceSum() {
+                        let sum = 0;
+                        this.goodlist.map(function (val) {
+                            if (val.ischeck) {
+                                sum += val.price;
+                            }
+
+                        })
+                        return sum;
+                    }
+                }
+
+            })
+        </script>
+
+</html>

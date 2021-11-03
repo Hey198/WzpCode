@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- <h1 v-if="num>10">大于10</h1>
+        <h1 v-else-if="num==10">等于10</h1>
+        <h1 v-else>小于10</h1> -->
+        <!-- <h1 v-if="isCn">你好</h1>
+        <h1 v-else>hello</h1>
+
+        <h1 v-if="isCn">世界</h1>
+        <h1 v-else>world</h1> -->
+
+        <h1 v-show="isCn">你好</h1>
+        <!-- <h1 v-else>hello</h1> -->
+
+        <h1 v-if="isCn">世界</h1>
+        <!-- <h1 v-else>world</h1> -->
+    </div>
+    <script>
+        let vue1 = new Vue({
+            el:"#app",
+            data:{
+                num:0,
+                isCn:false
+            }
+        })
+    </script>
+</body>
+</html>
