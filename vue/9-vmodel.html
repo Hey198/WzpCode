@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="box">
+       <input type="text" v-model="inp">
+       <button @click="clickHanle">btn</button>
+       <select v-model="selInp" >
+           <option value="11">1</option>
+           <option value="22">2</option>
+           <option value="33">3</option>
+           <option value="44">4</option>
+       </select>
+       <input type="radio" name="sex" value="0" v-model="sexInp">男
+       <input type="radio" name="sex" value="1" v-model="sexInp">女
+    
+       <input type="checkbox" name="hobby" value="0" v-model="hobbyInp">运动
+       <input type="checkbox" name="hobby" value="1" v-model="hobbyInp">篮球
+       <input type="checkbox" name="hobby" value="2" v-model="hobbyInp">游泳
+       <input type="checkbox" name="hobby" value="3" v-model="hobbyInp">游戏
+    </div>
+    <script>
+        new Vue({
+            el:"#box",
+            data:{
+                inp:"hel",
+                selInp:"33",
+                sexInp:"",
+                hobbyInp:[]
+            },
+            methods: {
+                clickHanle(){
+                    console.log(this.inp);
+                }
+            },
+        })
+    </script>
+</body>
+</html>
+

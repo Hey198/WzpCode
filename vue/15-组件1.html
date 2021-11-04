@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <fellow-test></fellow-test>
+    <!-- com1 声明的局部组件 仅能在所声明的挂载点内使用 -->
+    <com1></com1>
+  </div>
+  <div id="app2">
+    <!-- 利用你所写的组件名进行html标签 -->
+    <fellow-test></fellow-test>
+  </div>
+  <script>
+    //全局组件
+    //设置组件 不同分块
+    //驼峰命名时body内引入标签需要大写字母中间利用-连接才能识别
+    Vue.component("fellowTest",{
+      //设置模版 内嵌html标签
+      //渲染html文件
+      //利用模版字符串拼接
+      //模版内只能识别一个根标签
+      //不可识别并列几个标签 
+      //利用外层div内嵌所有需要的标签
+      template:`
+        <div>
+          <h1>hello fellow37</h1>
+          <p>hello world</p>
+        </div>
+      `
+    })
+    new Vue({
+      el:"#app",
+      data:{
+        
+      },
+      //局部组件
+      components:{
+        com1:{
+          template:`
+            <div>
+              <h1>这是一个局部组件</h1>  
+            </div>
+          `
+        }
+      }
+    })
+    new Vue({
+      el:"#app2",
+      data:{
+        
+      }
+    })
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <vip8></vip8>
+    </div>
+    <template id="tem1">
+        <div>
+            <h1>你好：{{title}}</h1>
+        </div>
+    </template>
+    <script>
+        let vue1 = new Vue({
+            el:"#app",
+            data:{
+                title:"你好"
+            },
+            //组件和 vue实例相互隔离
+            //相互间不影响 需要相互传递参数
+            components:{
+                vip8:{
+                    // 组件内部参数 data为一个函数
+                    //需要返回一个对象
+                    data(){
+                        return{
+                            // title:"vip8"
+                        }
+                    },
+                    template:"#tem1"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

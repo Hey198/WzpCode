@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 引用模版 -->
+        <vip8></vip8>
+    </div>
+    <!--  声明组件模版 -->
+    <template id="tem1">
+        <!-- 模版内 只能存在一个根标签
+        同时存在多个可以使用v-if等进行判断
+        -->
+        <div>
+            <h1>hello world</h1>
+            <h1>你好</h1>
+        </div>
+    </template>
+    <script>
+        let vue1 = new Vue({
+            el: "#app",
+            //组件
+            components: {
+                vip8: {
+                    //选择器 选择 模版
+                    template: "#tem1"
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

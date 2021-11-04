@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 模版调用 -->
+        <!-- 属性后面 变量解析 用v-bind -->
+        <vip8 v-bind:title="myTitle"></vip8>
+    </div>
+    <!-- 模版定义 -->
+    <template id="tem1">
+        <div>
+            <h1>你好：{{title}}</h1>
+        </div>
+    </template>
+    <script>
+        let vue1 = new Vue({
+            el:"#app",
+            data:{
+                //父组件参数
+                myTitle:"vip8"
+            },
+            components:{
+                vip8:{
+                    //子组件接收参数
+                    props:['title'],
+                    template:"#tem1"
+                }
+            }
+        })
+    </script>
+</body>
+</html>

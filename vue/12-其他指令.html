@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 跳过这个元素和它的子元素的编译过程 -->
+        <div v-pre>
+            {{obj.school}}---{{obj.name}}
+            
+        </div>
+        <!-- 页面渲染一次后 不再改变渲染 -->
+        <div v-once>
+            {{sum}}
+        </div>
+        <button @click="clickHandle">btn</button>
+    </div>
+    <script>
+        let vue1 = new Vue({
+            el:"#app",
+            data:{
+                sum:1,
+                obj:{
+                    school:"黑大",
+                    name:"小明"
+                }
+            },
+            methods: {
+                clickHandle(){
+                    ++this.sum;
+                }
+            },
+        })
+    </script>
+</body>
+</html>

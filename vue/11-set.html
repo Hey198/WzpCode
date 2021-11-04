@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{arr}}
+        {{obj.school}}---{{obj.name}}---{{obj.sex}}
+        <button @click='clickHandle'>change</button>
+    </div>
+    <script>
+        let vue1 = new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3,4,5,6],
+                obj:{
+                    school:"黑大",
+                    name:"小明"
+                }
+            },
+            methods: {
+                clickHandle(){
+                    console.log(1123);
+                     //this.arr.push(7);
+                     //this.arr[0] = 'a';
+
+                    Vue.set(this.arr,0,'a');
+
+                    this.obj.school = "农大"
+                    // this.obj.sex = "男";
+                    //新添加的属性值 由字符串形式添加
+                    Vue.set(this.obj,'sex','男')
+                }
+            },
+        })
+    </script>
+</body>
+</html>

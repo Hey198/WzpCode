@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <!-- 属性以变量的形式进行解析 利用v-bind -->
+    <!-- 设定属性 内容comname="name" 在组件内props声明 在模版内使用传递 -->
+    <com1 v-bind:comname="name" @testhandle="parentHandle"></com1>
+    <h1>父组件:{{name}}</h1>
+  </div>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        name: "小刚"
+      },
+      methods: {
+        parentHandle(newName) {
+           console.log("hello");
+          // this.name="小李"
+          console.log(newName);
+          //利用自定义事件 接收传递参数 
+          //在子组件修改父组件内容
+          this.name = newName
+        }
+      },
+      components: {
+        com1: {
+          //父组件向子组件传参利用props
+          props: ['comname'],
+          template: `
+            <div>
+              <h1>我的名字是:{{comname}}</h1>  
+              <button @click="changeName">changeName</button>
+            </div>
+          `,
+          methods: {
+            changeName() {
+              // console.log(this.comname);
+              // this.comname = "小李"
+              //$emit触发自定义事件
+              this.$emit('testhandle', "小张")
+            }
+          }
+        }
+      }
+    })
+
+  </script>
+</body>
+
+</html>
