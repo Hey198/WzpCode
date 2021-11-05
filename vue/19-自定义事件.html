@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 父组件内 定义一个自定义事件
+        用于子组件对 父组件内部数据进行操作
+    在自组件内 emit 触发该自定义事件
+    -->
+        <okok v-on:testhandle="childEvent" :num="i"></okok>
+    </div>
+    <template id="tem1">
+        <div>
+            <h1>{{num}}</h1>
+            <button @click="addHandle">btn</button>
+        </div>
+    </template>
+    <script>
+        let vue1 = new Vue({
+            el: "#app",
+            data: {
+                i: 1
+            },
+            methods: {
+                // 子组件传递的参数
+                childEvent(n) {
+                    this.i += n;
+                }
+            },
+            components: {
+                okok: {
+                    props: ['num'],
+                    template: "#tem1",
+                    methods: {
+                        addHandle() {
+                            // console.log(this.num);
+                            // ++this.num
+                            //触发自定义事件
+                            // 事件函数名  传递的参数
+                            this.$emit("testhandle", 10)
+                        }
+                    },
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

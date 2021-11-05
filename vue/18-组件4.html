@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./js/vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <global-com1 :com1props="num"></global-com1>
+  </div>
+  <!-- 利用template标签在外部定义模版内容
+  利用id名称在组建内声明该内容的模版
+  避免在组件内拼接字符串 -->
+  <template id="com1">
+    <div>
+      <!-- 模版内同样只能有一个根标签 -->
+      <h1>hello{{com1props}}</h1>
+      <global-com2 :com2props="com1props"></global-com2>
+    </div>
+  </template>
+  <template id="com2">
+    <div>
+      <h1>world{{com2props}}</h1>
+    </div>
+  </template>
+  <script>
+    //全局组件
+    Vue.component("globalCom1", {
+      template: "#com1",
+      //传参
+      props: ['com1props']
+    })
+    Vue.component("globalCom2", {
+      template: "#com2",
+      props: ['com2props']
+    })
+    new Vue({
+      el: "#app",
+      data: {
+        num: 123
+      }
+    })
+  </script>
+</body>
+
+</html>
