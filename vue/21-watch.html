@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <!-- <h1>{{num}}+{{num2}}={{sum}}</h1> -->
+        <h1>{{obj.a}}</h1>
+       <button @click="addHandle">btn</button>
+    </div>
+    <script>
+        let vue1 = new Vue({
+            el:"#app",
+            data:{
+                num:0,
+                num2:1,
+                obj:{
+                    a:1,
+                    b:2
+                }
+            },
+            computed:{
+                sum(){
+                    // console.log("change")
+                    return this.num + this.num2
+                }
+            },
+            watch:{
+                num:function(){
+
+                },
+                //监听的数据 可以有两个参数
+                // 现在的数据值 之前的数据值
+                // num(val,oldval){
+                //     console.log(val,oldval)
+                // },
+
+                // 单独 监听 对象内某一个属性值的变化
+                // 'obj.a':function(){
+                //     console.log("123")
+                // }
+
+
+                //监听 obj对象内部 任意属性发生变化
+                obj:{
+                    deep:true,
+                    handler(){
+                        console.log("com");
+                    }
+                }
+            },
+            methods: {
+                addHandle(){
+                    // ++this.num
+                    // this.obj.a = "hello";
+                    this.obj.b = "world"
+                }
+            },
+        })
+
+        // computed 一个值受多个值的影响
+        // watch 多个值受一个值影响
+    </script>
+</body>
+</html>
