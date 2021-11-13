@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //set 类数组 不允许有重复
+        // let setArr = new Set();
+        // // add添加值
+        // setArr.add(1);
+        // setArr.add("hello");
+        // setArr.add(2);
+        // //清除
+        // setArr.delete(2);
+        // // setArr.clear()
+        // console.log(setArr.has("ahello"));
+        // console.log(setArr);
+        // for(let val of setArr){
+        //     console.log(val);
+        // }
+
+        // //数组去重
+        // let arr = [1, 2, 3, 4, 5, 6, 7, 3, 5, 4];
+        // let setArr = new Set(arr);
+        // //类数组转化为数组
+        // console.log(Array.from(setArr));
+        // console.log(setArr);
+
+        //WeakSet 只能添加对象
+        let ws = new WeakSet();
+        ws.add({ name: "xiaoa " });
+        // ws.add("hello");
+        console.log(ws);
+    </script>
+</body>
+
+</html>

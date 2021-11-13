@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function foo(){
+
+        // }
+        // let foo=function(){
+
+        // }
+        // function foo(a){
+        //     console.log(a);
+        // }
+        // foo(1);
+
+        // let foo = (a) => {
+        //     console.log(a);
+        // }
+        // foo(123)
+
+        // function foo(a, b) {
+        //     return a + b;
+        // }
+        // console.log(foo(1, 2));
+
+        // let foo = (a, b) => a + b;
+        // //等价于 let foo=(a,b)=>{return a+b; } 只能是一行语句
+        // console.log(foo(1, 2));
+
+        var name = "小b";
+        var obj = {
+            name: "小a",
+            showName: function () {
+                console.log(this.name);
+                //箭头函数的this 指向的不是调用的它的对象
+                //而是定义它所在的this
+                //也可以理解它自己没有this指向
+                var foo = () => {
+                    console.log(this.name);
+                }
+                foo()
+            }
+        }
+        obj.showName()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //use strict
+        // 'use strict'
+        // let a=10;
+        // console.log(a);
+
+        // 'use strict'
+        // function foo(){
+        //     console.log(this);
+        // }
+        // foo();
+
+        //array 构造函数  arr 实例化对象arr
+        // let arr=new Array(1,2,3,4);
+        // console.log(arr);
+
+        //创建构造函数首字母大写
+        // function Person() {
+        //     this.name = "xiaoaaa";
+        //     this.school = "黑大";
+        // }
+        // let student = new Person();
+        //第一步 new 创建空对象
+        //第二步 Person.call（空对象）
+        //第三步 原型指向
+        //第四步 把创建好的对象赋值给等号左边
+        // console.log(student.name);
+
+        // function Person(name) {
+        //     this.name = name;
+        //     this.school = "黑大";
+        // }
+        // Person.prototype.showInfo = function () {
+        //     console.log("xuexiao" + this.name);
+        //     console.log("xingming" + this.school);
+
+        // }
+        // let student = new Person("小a");
+        // let student2 = new Person("小b");
+        // console.log(student.name);
+        // console.log(student2.name);
+        // student.showInfo();
+
+        //1加到10
+        // let num=0;
+        // for (i=1;i<11;i++){
+        //     num+=i;
+        // }
+        // console.log(num);
+        //递归方法
+        function foo(num) {
+            if (num == 1) {
+                return 1;
+            }
+            else {
+                // arguments.callee相当于调用自己
+                return num + arguments.callee(num - 1)
+            }
+        }
+        console.log(foo(10));
+    </script>
+</body>
+
+</html>

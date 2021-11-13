@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //接收不确定参数
+        // function foo(...arg) {
+        //     console.log(arg);
+        // }
+        // foo(1, 2, 3, 4, 5, 6)
+
+        // let arr=[1,2,3,4];
+        // let arr2=["a","b","c","d"];
+        // let arr=[1,2,...arr2,3,4];
+        // console.log(arr);
+
+        // let arr=["a","b","c","d"];
+        // let arr2=arr;
+        // arr2[0]="1";
+        // 使用...arr相当于一个新的地址 和原有不是一个相同位置
+        // let arr2=[...arr];
+        // arr2[0]="1";
+        // console.log(arr);
+
+        //只能操作一维数组
+        // let arr=[[1,2],"b","c","d"];
+        // let arr2=[...arr];
+        // arr2[0][0]="hello";
+        // console.log(arr);
+
+        // let arr=[1,2,3,4,5];
+        // let arr2=['a','b','c','d'];
+        // let arr3=[...arr,...arr2];
+        // console.log(arr3);
+
+        // let obj = {
+        //     name: "abc"
+        // }
+        // let obj2 = {
+        //     age: 20,
+        //     parent: {
+        //         name: "bbbbb"
+        //     }
+        // }
+        // let obj3 = { ...obj, ...obj2 }
+        // obj2.parent.name = "hello";
+        // console.log(obj3);
+
+
+        // let arr=["hello","world"];
+        // // let [a,b]=arr;
+        // let [a,b,c]=["fellow",...arr]
+        // console.log(a,b,c);
+
+        //剩余运算符
+        //把剩余部分放在arg中
+        //必须放在 所有参数最后面
+        function foo(a, b,...arg) {
+            console.log(a, b,arg);
+        }
+        foo(1, 2, 3, 4, 5, 6)
+    </script>
+</body>
+
+</html>

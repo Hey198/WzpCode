@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let map1 = new Map;
+        // map1.set("name", "hello");
+        // map1.set("school", "world");
+        // map1.set("age", 20);
+        // console.log(map1);
+
+        // console.log(map1.get("age"));
+        // console.log(map1.has("name"));
+        // for (let [key,val] of map1) {
+        //     console.log(key,val);
+        // }
+
+        //weakmap 所有key值必须是对象
+    let map2=new WeakMap();
+    let obj ={
+        name:"xiaoa"
+    }
+    map2.set(obj,"hello")
+    console.log(map2);
+
+    </script>
+</body>
+
+</html>

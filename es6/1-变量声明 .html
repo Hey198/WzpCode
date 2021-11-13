@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        //方案一 添加index
+        // var oLi=document.getElementsByTagName("li");
+        // for(var i=0;i<oLi.length;i++){
+        //     oLi[i].index=i;
+        //     oLi[i].onclick=function(){
+        //         console.log(this.index);
+        //     }
+        // }
+
+        // 方案二 闭包
+        // var oLi = document.getElementsByTagName("li");
+        // for (var i = 0; i < oLi.length; i++) {
+        //     (function (index) {
+        //         oLi[i].onclick = function () {
+        //             console.log(index);
+        //         }
+        //     })(i)
+        // }
+
+        //方案三 let块作用域
+        //  var oLi=document.getElementsByTagName("li");
+        // for(let i=0;i<oLi.length;i++){
+
+        //     oLi[i].onclick=function(){
+        //         console.log(i);
+        //     }
+        // }
+
+        // let
+        // 不存在变量提升
+        // 不允许重复声明
+        // 暂时性死区 先定义后使用
+        // 块级作用域
+        // 变量提升 把
+        // var a 提升
+        // 赋值过程没有提升
+
+        // console.log(a);
+        //  var a=10;
+        //  var a='abc'
+
+
+        // let 不允许变量提升 
+        // 不可以重复定义
+        // 先定义再调用
+        //  let a=10; 
+        //  let a='abc';
+        // console.log(a);
+
+        // let 是块级作用域
+        // let a = 'abc';
+        // console.log(window.a);
+
+        //相当于全局变量
+        // if (1) {
+        //     var a = 10;
+        // }
+        //  函数内 不用var 声明 即是全局变量
+        // function foo() {
+        //     b = "abc";
+        // }
+        // foo();
+        // console.log(a);
+        // console.log(b);
+
+        // let是块级作用域 一般在以下这种范围即为局部变量
+        // if (true) {
+        //     let a = 10;
+        //     console.log(a);
+        // }
+        // console.log(a);
+
+        // const
+        // console.log(a);
+        // const a=10;
+
+        // 不可修改 只读
+        // const a=10;
+        // a=20;
+
+        // 基本数据类型 
+        // 引用数据类型 修改内部方法等不会报错
+        // const obj = {
+        //     name: "abc"
+        // }
+        // obj.name = "bbb"
+        // obj={};
+        // console.log(obj);
+        
+        // const obj={
+        //     name:"abc"
+        // }
+        // 冻结后不可修改
+        // Object.freeze(obj)
+        // obj.name="abc";
+        // console.log(obj);
+    </script>
+</body>
+
+</html>

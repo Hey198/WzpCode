@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        //array from 把类数组josn数组格式 转化为数组
+        // var aLi=document.getElementsByTagName("li");
+        // console.log(aLi);
+        // console.log(Array.from(aLi));
+
+        // let josn1={
+        //     "0":"商品1",
+        //     "1":"商品2",
+        //     //必须设定和内容数量相匹配否则会出现问题
+        //     length:2
+        // }
+        // console.log(josn1);
+        // console.log(Array.from(josn1));
+
+
+        //array of 把一些数据转化为数组
+        //console.log(Array.of("abc",100,{name:"xiaowang"},true));
+
+
+        //copyWithin
+        // let arr=[1,2,3,4,5,6,7,8,9];
+        // console.log(arr.copyWithin(4,5,7));
+
+        //find
+        // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // num = arr.find(function (val, key, arr) {
+        //     // console.log(val, key, arr);
+        //     return val > 5
+        // })
+        // console.log(num);
+
+        //fill
+        // let arr=["a","b","c","d","e"];
+        // console.log(arr.fill("xx",1,3));
+
+        //如果array中只有一个大于一的值相当于创建有几个空的数组
+        //多个数值直接创建数组
+        // let arr=new Array(3).fill("a");
+        // console.log(arr);
+
+        // let arr=["a","b","c","d","e"];
+        // //是否有所检索的值
+        // console.log(arr.includes ("c") );
+        // //返回索引 没有当前字符就返回-1
+        // // console.log(arr.indexOf("a"));
+
+        // let arr = ["a", "b", "c", "d", "e"];
+        // //for of 常用于遍历数组
+        // //arr 获取数组值
+        // //arr.key()获取索引
+        // for (let val of arr) {
+        //     console.log(val);
+        // }
+        // //enteries同时获取索引和值
+        // for (let [ke, va] of arr.entries()) {
+        //     console.log(ke, va);
+        // }
+
+        // //解构赋值
+        // // let [a,b]=["hello","world"]
+
+        //数组遍历
+        //foreach 无返回值
+        // let arr = ["a", "b", "c", "d", "e"];
+        // arr.forEach(function (val, key, arr) {
+        //     console.log(val, key, arr);
+        // })
+
+        //map  有返回值 一个新的数组 必须有return 
+        // let arr = ["a", "b", "c", "d", "e"];
+        // let arr2 = arr.map(function (val, key, arr) {
+        //     console.log(val, key, arr);
+        //     if(val!="c")
+        //     return val;
+        //     else{
+        //         return "hello";
+        //     }
+        // })
+        // console.log(arr2);
+
+        //filter
+        let arr = ["a", "b", "c", "d", "e"];
+        let arr2 = arr.filter(function (val, key, arr) {
+            console.log(val, key, arr);
+            if (val != "c")
+                return val;
+        })
+        console.log(arr2);
+
+
+        //some 返回值 有一个满足条件返回 true 否则false
+        // let arr = [1, 2, 3, 4, 5, 6, 7];
+        // let boo = arr.some(function (val, key, arr) {
+        //     console.log(val);
+        //     return val > 4;
+        // })
+        // console.log(boo);
+        
+
+        // //所有满足条件 返回true 否则返回false
+        // let boo2=arr.every(function(val,key,arr){
+        //     console.log(val);
+        //     return val>4;
+        // })
+        // console.log(boo2);
+    </script>
+</body>
+
+</html>

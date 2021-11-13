@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //构造继承
+        // //构造继承只能继承属性 不能继承原型方法
+        // function Person(name, age) {
+        //     this.name = "我叫" + name;
+        //     this.age = "我的年龄是" + age;
+        // }
+        // Person.prototype.speak = function(){
+        //     console.log("hello");
+        // }
+        // function Teacher(name, age) {
+
+        //     Person.call(this, name, age);
+
+        // }
+        // let teacher1 = new Teacher("小王", 30);
+        // console.log(teacher1.name);
+        // let person1 = new Person("小a", "20");
+        // person1.speak();
+        // teacher1.speak();
+        // console.log(person1.name, person1.age);
+
+        //原型继承
+        // function Person(name, age) {
+        //     this.name = "我叫" + name;
+        //     this.age = "我的年龄是" + age;
+        // }
+        // Person.prototype.speak = function(){
+        //     console.log("hello");
+        // }
+        // function Teacher(name, age) {
+        // }
+        // //继承了person的原型
+        // Teacher.prototype=new Person();
+        // let teacher1=new Teacher();
+        // teacher1.speak();
+        // console.log(teacher1.name);
+
+        //组合继承
+        function Person(name, age) {
+            this.name = "我叫" + name;
+            this.age = "我的年龄是" + age;
+        }
+        Person.prototype.speak = function () {
+            console.log("hello");
+        }
+        function Teacher(name, age) {
+            Person.call(this,name,age)
+        }
+        Teacher.prototype=new Person();
+        let teacher1=new Teacher("aaaa",30);
+        console.log(teacher1.name,teacher1.age);
+        teacher1.speak();
+
+       
+
+    </script>
+</body>
+
+</html>

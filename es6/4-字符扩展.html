@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="oul">
+        <li>
+            <h1>第一行</h1>
+            <h2>第一行信息</h2>
+        </li>
+        <li>
+            <h1>第二行</h1>
+            <h2>第二行信息</h2>
+        </li>
+    </ul>
+    <button id="btn">add</button>
+    <script>
+        // var oUl = document.getElementById("oul");
+        // var oBtn = document.getElementById("btn");
+        // var num = 2;
+        // var str = "";
+        // oBtn.onclick = function () {
+
+        // str = "<li>" +
+        //     "<h1 class='active'>第" + num + "行</h1>" +
+        //     "<h2>就将计就计</h2>" +
+        //     "</li>"
+
+        //模板字符串 内即可进行简单逻辑运算
+        //     let str=`<li>
+        //         <h1 class="active">第${++num}行</h1>
+        //         </li>`
+        //         oUl.innerHTML += str;
+        // }
+        // appendChild 必须是节点进行操作
+        //oUl.appendChild(str);
+
+        // let str = "hello world";
+        // //当前字符所在位置
+        // console.log(str.indexOf("hell"));
+        // //是否包含当前字符
+        // console.log(str.includes("r"));
+        // //当前字符串是否以下面字符开头
+        // //endWith
+        // console.log(str.startsWith("hel"));
+
+        // function sw(str,s){
+        //     if(str.indexOf(s)==0)
+        //     return true;
+        // }
+        // console.log(sw(str,"hel"));
+
+        //构造函数
+        // String.prototype 原型
+        //实例化对象
+        // str._proto_
+        // String.prototype.sw = function (s) {
+        //     if (this.indexOf(s) == 0)
+        //         return true;
+        //     else {
+        //         return false;
+        //     }
+        // }
+        // console.log(str.sw("ahe"));
+
+        let str = "hello";
+        //用第二个字符串从开始补充到第一个参数的位数
+        //padEnd 在结束位置填充
+        console.log(str.padStart(10, "ab"));
+        //重复字符串
+        console.log(str.repeat(5));
+    </script>
+</body>
+
+</html>
