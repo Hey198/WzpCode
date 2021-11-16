@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 1;
+        var obj = {
+            a:2
+        }
+        function foo(str,str2){
+            console.log(this.a,str,str2);
+        }
+        //foo.call（）第一个参数 是 改变this指向的对象 让指向谁  第二开始 是调用函数的 参数 
+        // foo.call(obj,"hello","world");
+        //只可以接收两个参数 第一个是改变this指向的对象 让指向谁 第二个参数是一个数组 数组内可传多个参数
+        // foo.apply(obj,['hello','world'])
+
+        //bind 把 this指向 绑定好 但不立即执行  调用后 执行
+        // let foo2 = foo.bind(obj,"hello","world");
+        // foo2();
+    </script>
+</body>
+</html>

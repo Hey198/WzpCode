@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function foo(c,b=0){
+        //     // if(!b){
+        //     //     b=0
+        //     // }
+        //     // b=b?b:0;
+        //     console.log(a+b);
+        // }
+        // foo()
+
+        // function foo(c,b){
+        //     // if(!b){
+        //     //     b=0
+        //     // }
+        //     // b=b?b:0;
+        //     console.log(a+b);
+        // }
+
+        // 输出必传的参数个数
+        // console.log(foo.length);
+        
+        // function foo(){
+        //     console.log("hello");
+        // }
+        // var foo = function(){
+        //     console.log("world");
+        // }
+
+        // var a = 2;
+        // var obj = {
+        //     a:1,
+        //     fun:function(){
+        //         console.log(this.a)
+        //         var that = this
+        //         function foo(){
+        //             console.log(that.a);
+        //         }
+        //         foo();
+        //     }
+        // }
+        // obj.fun();
+
+        //箭头函数  解决this 指向问题
+        // let foo = (a)=>{
+        //     console.log(a);
+        // }
+        // foo(1)
+
+        // var a = 2;
+        // var obj = {
+        //     a:1,
+        //     fun:function(){
+        //         console.log(this.a)
+        //         let foo = ()=>{
+        //             console.log(this.a)
+        //         }
+        //         foo();
+        //     }
+        // }
+        // obj.fun();
+
+        //arguements 可以拿到 普通函数 参数
+        // 箭头函数不可以
+        // let foo = ()=>{
+        //     console.log(arguments);
+        // }
+        // function foo(){
+        //     console.log(arguments);
+        // }
+        // foo(1,2,3,4)
+
+        // function foo(){
+        //     return "hello"
+        // }
+        
+        //箭头函数 省略大括号 相当于直接return 第一条语句
+
+        // let foo = ()=> "hello";
+        
+
+        // console.log(foo());
+
+        // 'use strict'
+        // a = 10;
+        // console.log(a);
+
+        // var a = 10;
+        // function foo(){
+        //     console.log(this);
+        // }
+        // foo();
+
+
+        // function foo(a,a){
+        //     console.log(a);
+        // }
+        // foo(1,2)
+
+        // function foo(){
+        //     console.log(arguments.callee())
+        // }
+        // foo(1,2)
+        // b = 20
+        // function foo(){
+        //     'use strict'
+        //     a = 10;
+        // }
+        // foo();
+
+    </script>
+</body>
+</html>

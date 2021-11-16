@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //ajax请求 分为
+
+        // 第一步创建 XMLHttpRequest 对象
+        var xhttp;
+        if (window.XMLHttpRequest) {
+            xhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        // 127.0.0.1:5500 访问本地文件
+
+        //第二步向服务端发送请求
+        xhttp.open("GET", "http://47.92.82.13:4000/showMessage", true);
+       // xhttp.open("GET", "./data.json", true);
+        xhttp.send();
+        //第三步接受服务端响应
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                // console.log(this.responseText)
+                //把json 字符串转化为对象
+                console.log(JSON.parse(this.responseText));
+            }
+        };
+    </script>
+</body>
+
+</html>

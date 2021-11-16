@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入封装的 ajax -->
+    <script src="./ajax.js"></script>
+</head>
+
+<body>
+    <input type="text" id="inp" placeholder="请输入内容">
+    <button id="btn">提交</button>
+    <ul id="box">
+    </ul>
+    <script>
+        let oBox = document.querySelector("#box");
+        let oInp = document.querySelector("#inp");
+        let oBtn = document.querySelector("#btn");
+
+
+        //点击添加数据
+        oBtn.onclick = function () {
+            //三个参数  地址  对象形式 参数  回调函数
+            ajaxPost("http://47.92.82.13:4000/insertOneLevel", {
+                levelname: oInp.value
+                //res 为形参 接收返回值
+            }, function (res) {
+                //重新 获取数据
+                getData();
+                oInp.value = "";
+            })
+        }
+
+        // setTimeout(function(){
+        //     console.log(1);
+        // },1000)
+
+
+        //获取显示数据
+        function getData() {
+            //       以参数形式 传回  url  和回调函数两个参数  并且接收 请求回来的数据 res为形参接收
+            ajaxGet("http://47.92.82.13:4000/showLevel", function (res) {
+                console.log(res);
+                let resHtml = '';
+                res.data.map((item) => {
+                    resHtml += `
+                    <li>${item.levelname}</li>
+                `
+                })
+
+                oBox.innerHTML = resHtml;
+            })
+        }
+
+        getData()
+        // let obj = {
+        //     a:1,
+        //     b:2,
+        //     c:3
+        // }
+        // // "a=1&b=2&c=3"
+        // let str = ""
+        // for(let item in obj){
+        //     str += `${item}=${obj[item]}&`;
+        // }
+        // str = str.substr(0,str.length-1);
+        //根据特定符号 剪切元素 成为一个数组
+        // // str = str.split("");
+        //删除数组最后一个元素
+        // // str.pop();
+        //把数组 变成字符串
+        // // str = str.join("");
+        // console.log(str);
+    </script>
+</body>
+
+</html>

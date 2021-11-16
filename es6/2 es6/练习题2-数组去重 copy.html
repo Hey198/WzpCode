@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //   let testArr = [1,2,3,4,5,3,5];
+
+    //删除 元素 第三个 参数 为添加
+    //   arr.splice(1,1,"hello");
+    //   console.log(arr);
+
+      // 方法一
+    //   function unique(arr){
+    //       for(let i=0;i<arr.length;i++){
+    //           for(let j = i+1;j<arr.length;j++){
+    //               if(arr[i] == arr[j]){
+    //                 arr.splice(j,1);
+    //由于 每次 删除 元素后 整个数组长度减少一个需要 把 索引减一
+    //                 j--
+    //               }
+    //           }
+    //       }
+    //       return arr
+    //   }
+    //   console.log(unique(testArr));
+
+    // 方法二
+    // let testArr = [1,2,3,4,5,3,5];
+    //      数组包含此元素 返回相应索引下标 没有返回-1
+    // // console.log(testArr.indexOf(6));
+    //   返回布尔值
+    // // console.log(testArr.includes(2));
+
+    // function unique(arr){
+    //     let newArr = []
+    //     for(let i=0;i<testArr.length;i++){
+    //         if(!newArr.includes(arr[i])){
+    //             newArr.push(arr[i])
+    //         }
+    //     }
+    //     return newArr;
+    // }
+    // console.log(unique(testArr));
+
+    
+    // 方法三
+    // 判断 重复的元素 的重复次数
+    let testArr = [1,2,3,4,5,3,5];
+
+    //key 值 唯一
+    // let obj = {
+    //     a:1,
+    //     b:2
+    // }
+    // obj.a = 6;
+
+    function unique(arr){
+        let obj = {}
+        for(let i=0;i<arr.length;i++){
+            //如果 有该属性 则 属性值 加一
+            if(obj[arr[i]]){
+                obj[arr[i]]++;
+            }else{
+                obj[arr[i]] = 1;
+            }
+        }
+        console.log(obj);
+        //把当前对象内所有key值 以数组的形式返回
+        return Object.keys(obj)
+    }
+    console.log(unique(testArr));
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ajax.js"></script>
+</head>
+
+<body>
+    <script>
+        // promise 异步优化解决方案 
+        //解决请求响应顺序问题
+
+
+        // 回调地狱
+        // ajaxGet("./data/a.json", function (res) {
+        //     console.log(res);
+        //     ajaxGet("./data/b.json", function (res) {
+        //         console.log(res);
+        //         ajaxGet("./data/c.json", function (res) {
+        //             console.log(res);
+        //         })
+        //     })
+        // })
+
+        //resolove 表示请求 成功  reject 表示请求失败
+        let pro = new Promise(function(resolve,reject){
+             resolve("hello");
+            //reject();
+        })
+
+        pro.then(function(res){
+            console.log(res);
+        }).catch(function(){
+            console.log("erro");
+        })
+
+        // new Promise(function(resolve,reject){
+        //     ajaxGet("./data/a.json",function(res){
+        //         console.log(res);
+        //         resolve()
+        //     })
+        // }).then(function(){
+        //     ajaxGet("./data/b.json",function(res){
+        //         console.log(res);
+        //         return new Promise(function(resolve,reject){
+        //             resolve()
+        //         })
+        //     })
+        // }).then(function(){
+        //     ajaxGet("./data/c.json", function (res) {
+        //         console.log(res);
+        //     })
+        // })
+
+        // function getData(url){
+        //     return new Promise(function(resolve,reject){
+        //         ajaxGet(url, function (res) {
+        //             resolve(res);
+        //         })
+        //     })
+        // }
+
+        // getData("./data/a.json").then(function(res){
+        //     console.log(res);
+        //     return getData("./data/b.json")
+        // }).then(function(res){
+        //     console.log(res);
+        //     return getData("./data/c.json")
+        // }).then(function(res){
+        //     console.log(res);
+        // })
+
+
+        //所有请求 请求成功
+        // Promise.all()
+
+        // let pro1 = new Promise(function(resolve,reject){
+        //     ajaxGet("./data/a.json", function (res) {
+        //         resolve(res);
+        //     })
+        // })
+
+        // let pro2 = new Promise(function(resolve,reject){
+        //     ajaxGet("./data/b.json", function (res) {
+        //         resolve(res);
+        //     })
+        // })
+
+        // let pro3 = new Promise(function(resolve,reject){
+        //     ajaxGet("./data/c.json", function (res) {
+        //         resolve(res);
+        //     })
+        // })
+
+            //数组里每个参数都是一个promise对象
+        // Promise.all([pro1,pro2,pro3]).then(function(res){
+        //     console.log(res);
+        // }).catch(function(){
+        //     console.log("error");
+        // })
+
+        //第一个请求成功 或者失败返回相应信息
+        // Promise.race([pro1,pro2,pro3]).then(function(res){
+        //     console.log(res);
+        // }).catch(function(){
+        //     console.log("error");
+        // })
+
+
+
+
+    </script>
+</body>
+
+</html>

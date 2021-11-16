@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //能通过 new 构造出来实例化对象的就是构造函数
+        // let arr = new Array('1','2','3');
+        // console.log(arr);
+
+        //自定义构造函数
+        //构造函数 首字母大写
+        // function Person(name){
+        //     this.name = name;
+        //     // this.speak = function(){
+        //     //     console.log("hello");
+        //     // }
+        // }
+        // Person.prototype.speak = function(){
+        //     console.log(this.name + "说hello");
+
+        // }
+
+        // let xm = new Person('小明');
+        // console.log(xm.name);
+        // xm.speak();
+
+        // let xg = new Person('小刚');
+        // console.log(xg.name);
+        // xg.speak();
+
+
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.speak = function(){
+            console.log(this.name+"今年"+this.age+"岁");
+        }
+
+        //构造函数 属性继承
+        function Teacher(name,age,school){
+            Person.call(this,name,age);
+            this.school = school;
+        }
+
+        //方法 继承 
+        Teacher.prototype = new Person();
+        //改变 teacher 的构造函数
+        Teacher.prototype.constructor = Teacher;
+        //原型下加方法
+        Teacher.prototype.showSchool = function(){
+            console.log(this.school);
+        }
+
+        
+        let t1 = new Teacher("老王",30,"黑大");
+        // t1.speak();
+
+        console.log(t1.name);
+        //查看 t1的构造函数
+        // console.log(t1.__proto__.constructor);
+        t1.speak();
+        t1.showSchool();
+
+
+        // 原型链 顶级Object
+    </script>
+</body>
+</html>

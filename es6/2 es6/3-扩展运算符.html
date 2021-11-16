@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function foo(a,b,c){
+        //     console.log(a,b,c);
+        // }
+        // foo(1,2,3)
+
+        // function foo(){
+        //     console.log(arguments);
+        // }
+        // foo(1,2,3,4,5,6)
+
+        // function foo(...arg){
+        //     console.log(arg);
+        // }
+        // foo(1,2,3,4,5)
+
+        // let arr = [1,2,3,4];
+        // let arr2 = [5,6,7,8];
+
+        // let arr3 = arr.concat(arr2);
+        // let arr3 = [...arr,...arr2];
+        // console.log(arr3);
+
+        // let obj = {
+        //     name:"小明"
+        // }
+        // let obj2 = {
+        //     age:18,
+        //     school:"黑大"
+        // }
+
+        // let info = {...obj,...obj2}
+        // obj2.age = 20;
+        // console.log(info);
+
+        // let obj1 = {
+        //     str:"hello"
+        // }
+        // let obj2 = {
+        //     str:"world",
+        //     str3:{
+        //         a:1
+        //     }
+        // }
+
+        // obj1 = {...obj2};
+        // // obj2.str="123"
+        // obj2.str3.a = "你好"; 
+        // console.log(obj1);
+
+        function foo(a,b,...arg){
+            console.log(a,b,arg);
+        }
+        foo(1,2,3,4,5,6,7,8,9)
+    </script>
+</body>
+</html>

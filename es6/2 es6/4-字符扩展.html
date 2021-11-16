@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .test {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <!-- <ul>
+            <li>hello</li>
+            <li>world</li>
+        </ul> -->
+    </div>
+    <button id="btn">btn</button>
+    <script>
+        let oBtn = document.querySelector("#btn");
+        let oBox = document.querySelector("#box");
+        let str = ""
+        oBtn.onclick = function () {
+            let num = Math.random();
+            //     str = "<ul>"+
+            //     "<li class='test' >"+ num +"</li>"+
+            //     "<li>world</li>"+
+            // "</ul>"
+            //模版字符串
+            str = `<ul>
+            <li class="test">${num + 1}</li>
+            <li>world</li>
+            </ul>`;
+            oBox.innerHTML = str;
+        }
+
+
+        // let num = Math.random();
+        // let str = "随机数字："+num+"!";
+        // console.log(str);
+
+
+
+        // var str = "hello"
+        //是否包含该字符串
+        // console.log(str.indexOf('a'));
+        // console.log(str.includes('a'));
+
+
+        // var str = "img/file.png";
+        // var str2 = "pages/file.html";
+
+        // console.log(str.startsWith("img/"));
+        // console.log(str2.endsWith('.png'));
+
+        // let str = "abc";
+
+        // console.log(str.padStart(10,"z"));
+        // console.log(str.padEnd(10,"z"));
+        // console.log(str.repeat(2));
+
+
+
+    </script>
+</body>
+
+</html>

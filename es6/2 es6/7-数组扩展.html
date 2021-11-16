@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        //把类数组 转化为 真数组
+        // Array.from()
+        // let aDiv = document.querySelectorAll("div");
+        // console.log(aDiv);
+        // console.log(Array.from(aDiv));
+
+        //把多个值 转化为数组
+        // console.log(Array.of(1,2,3,4,"hello"));
+
+        //是否包含 数组元素 返回 true false
+        // let arr = [1,2,3,4,5];
+        // console.log(arr.includes(3));
+
+
+        //遍历 数组值  索引 数组本身 
+
+        // arr.forEach(function(val,index,ar){
+        //     console.log(val,index,ar);
+        // })
+         // 返回布尔值 在哪一次 返回 true 停止循环
+        // let res = arr.find(function(val,index,ar){
+        //     console.log(val,index,ar);
+        //     return val == 3
+        // })
+
+       //返回索引
+        // let res = arr.findIndex(function(val,index,ar){
+        //     console.log(val,index,ar);
+        //     return val == 3
+        // })
+        // console.log(res);
+
+
+
+        // for(var i = 0;i<arr.length;i++){
+        //     console.log(arr[i]);
+        // }
+
+
+
+        // let arr = [1,2,3,4]
+        //添加到数组
+         // let arr = new Array(7).fill(1);
+        // arr.fill("a")
+        // console.log(arr);   
+
+        // let arr = [1,3,4,5];
+
+        //遍历可迭代对象 数组就是 可迭代对象
+        // for(let val of arr){
+        //     console.log(val);
+        // }
+
+        // for(let index of arr.keys()){
+        //     console.log(index);
+        // }
+
+        // for(let [index,val] of arr.entries()){
+        //     console.log(val,index);
+        // }
+
+        //map常见的循环遍历数组
+        //可接收 返回值  
+        //每次循环返回值
+        // var arr = [1,2,3,4,5,6,7,8,9]
+        // 参数   数组内容 索引 数组
+        // let arr2 = arr.map(function(val,index,ar){
+        //     // console.log(val,index,ar);
+        //     // return val + "0"
+        // })
+        // console.log(arr2);
+
+        //fiflter 过滤 返回值为布尔值
+        //每次循环 判断返回true 才会把循环结果值 返回
+        //放入新数组
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // let arr2 = arr.filter(function(val,index,ar){
+        //     // console.log(val,index,ar);
+        // 返回 false 将不将循环结果返回
+        //     if(val != 5) return true;
+        // })
+        // console.log(arr2);
+
+        //arr.some 满足条件的循环结束后 返回true 就结束
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // let foo = arr.some(function(val,index,ar){
+        //     console.log(val,index,ar);
+        //     if(val > 5){
+        //         return true
+        //     }
+        // })
+        // console.log(foo);
+
+        //每一次返回true 才能继续执行
+        // let arr = [1,2,3,4,5,6,7,8,9]
+        // let foo = arr.every(function(val,index,ar){
+        //     console.log(val,index,ar);
+        //     if(val > 5){
+        //         return true
+        //     }
+        // })
+        // console.log(foo);
+
+    </script>
+</body>
+
+</html>

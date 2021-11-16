@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ajax.js"></script>
+</head>
+<body>
+    <ul id="box">
+
+    </ul>
+    <script>
+        let oBox = document.querySelector("#box");
+        let pro1 = new Promise(function(resolve,reject){
+            ajaxGet("./data/data1.json",function(res){
+                resolve(res);
+            })
+        })
+
+        let pro2 = new Promise(function(resolve,reject){
+            ajaxGet("./data/data2.json",function(res){
+                resolve(res);
+            })
+        })
+
+        //数据全部请求成功之后
+        Promise.all([pro1,pro2]).then(function(res){
+            //接收含有两个对象的数组两个对象数组元素是 两次请求回来的数据
+            console.log(res[1].data)
+            //对象数组
+            let res1 = res[0].data;
+            let res2 = res[1].data;
+            let resArr = res1.map(function(item,index,arr){
+                console.log(item);
+                for(let i=0;i<res2.length;i++){
+                    if(item.jrid==res2[i].jrid){
+                        //返回对象
+                        return{
+                            jrid:item.jrid,
+                            levelname:item.levelname,
+                            username:res2[i].userName
+                        }
+                    }
+                }
+
+
+                // for(let i=0;i<res2.length;i++){
+                //     if(item.jrid == res2[i].jrid){
+                //         return{
+                //             jrid:item.jrid,
+                //             levelname:item.levelname,
+                //             username:res2[i].userName
+                //         }
+                //     }
+                // }
+            })
+            console.log(resArr);
+            let strHtml = ""
+            resArr.map(function(item){
+                //模版字符串 拼接变量 为${}
+                strHtml += `
+                
+                    <li>姓名：${item.username}---等级：${item.levelname}</li>
+                `
+            })
+            oBox.innerHTML = strHtml;
+        })
+
+    </script>
+</body>
+</html>

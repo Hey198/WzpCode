@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj = {
+        //     age:18,
+        //     school:"黑大"
+        // }
+
+        // let age = 18;
+        // let school = "黑大";
+
+        // let obj = {
+        //     age,
+        //     school,
+        //     name:"小明"
+        // }
+        // console.log(obj);
+
+        // let obj = {
+        //     name:"小明",
+        //     sayName(){
+        //         console.log(this.name);
+        //     }
+        // }
+        // obj.sayName()
+
+        // 属性名 以变量形式解析 
+        //用[]
+        // let str = "school";
+        // let obj = {
+        //     school:"黑大"
+        // }
+        // console.log(obj[str]);
+
+        // let str = "school";
+        // let obj = {
+        //     [str]:"黑大"
+        // }
+        // console.log(obj.school);
+
+        // let obj = {
+        //     a:1
+        // }
+        // let obj2 = {
+        //     a:1
+        // }
+        // obj = obj2;
+
+        //Object.is 判断两个对是否相等
+        // // console.log(obj == obj2);
+        // console.log(Object.is(obj,obj2));
+
+        // 不区分 正0 负0
+        // console.log(Object.is(-0,+0));
+        // if(-0===+0){
+        //     console.log("true");
+        // }
+        //nan nan
+        // console.log(Object.is(NaN,NaN));
+        // if(NaN===NaN){
+        //     console.log("true");
+        // }
+
+        // let obj = {
+        //     name:"小明"
+        // }
+        // let obj2 = {
+        //     age:18,
+        //     name:"小李"
+        // }
+        // let obj3 = {
+        //     school:"黑大"
+        // }
+
+        // // let obj3 = {...obj,...obj2}
+
+        // 把后面对象 合并到前面的对象内
+        //如果 有重复的 对象内属性 则后面的对象 会覆盖前一个对象内容
+        // Object.assign(obj,obj2,obj3)
+        // console.log(obj);
+        
+        // ‘’ in obj  判断属性是否在 对象内
+        //返回 个布尔值
+        let obj2 = {
+            age:18,
+            name:"小李"
+        }
+        console.log( 'age' in obj2 );
+    </script>
+</body>
+</html>

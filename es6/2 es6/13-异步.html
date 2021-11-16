@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //event loop
+        //异步任务 进入任务队列
+        // 可以执行时回归执行栈
+        // setTimeout(function(){
+        //     console.log(1);
+        // },1000)
+
+        // console.log(2);
+
+        // setTimeout(function(){
+        //     console.log(1);
+        // },0)
+        // console.log(2);
+
+        console.log(4);
+
+        setTimeout(function () {
+            console.log(2);
+        }, 0)
+        //promise 是同步的
+        let pro = new Promise(function (resolve, reject) {
+            resolve("1")
+            console.log(5);
+        })
+       // .then 是异步的
+        pro.then(function (res) {
+            console.log(res);
+        })
+
+        console.log(3);
+
+        //任务队列优先执行 微任务
+        // 任务队列 宏任务（setTimeout） 微任务（Promise then）
+
+    </script>
+</body>
+
+</html>
