@@ -1,0 +1,160 @@
+// // .box{
+// //     color: red;
+// // }
+
+// $color:red;
+// .box{
+//     color: $color;
+
+//     // 颜色
+//     /*
+//     test
+//     */
+//     /*!1.0.1*/
+//     .div1{
+//         color: red;
+//         .div2{
+//             color: blue;
+//         }
+//     }
+//     &::after{
+//         content: "你好";
+//     }
+//     &-div{
+//         color: red;
+//     }
+
+// }
+// .box2{
+//     border: {
+//         left:1px solid black;
+//         top:2px solid red;
+//     }
+// }
+
+// @mixin foo($fw,$fs:12px) {
+//     color: red;
+//     font-size: $fs;
+//     background-color: blue;
+//     font-weight: $fw;
+// }
+// .box3{
+//     @include foo(100);
+// }
+// .box4{
+//     @include foo(200);
+// }
+// .box4{
+//     @include foo(200,30px);
+// }
+
+// .box5{
+//     color: blue;
+//     font-size: 12px;
+//     background-color: yellow;
+//     .div11{
+//         color: green;
+//     }
+// }
+// .box6{
+//     @extend .box5;
+// }
+// @import './global.scss';
+
+// $w:100px;
+// .box7{
+//     // width: $w - 10px;
+//     height: $w + 10px;
+//     // width: $w * 10;
+//     // width: (100px / 10);
+
+//     width: percentage(30px/100px);
+
+// }
+// $burl:"../a/images/";
+// .box8{
+//     background-image: url(to-upper-case($burl)+"goods.png");
+// }
+// .box9{
+//     background-image: url($burl+"gt1.png");
+// }
+
+// $color2:#ff00ff;
+// .box10{
+//     // color: lighten($color2,40%);
+//     // color: darken($color2,60%);
+//     color: transparentize($color2,0.6);
+// }
+
+// $list1:1px solid black;
+// $list2:red blue yellow green;
+// .box11{
+//     border:$list1;
+//     color: nth($list2,1);
+// }
+// $map1:(color:red,font-size:12px,a:20px);
+// .box12{
+//     color:map-get($map1,color);
+//     font-size: map-get($map1,a);
+// }
+// /*
+// #{$color2}
+// #{type-of($color2)}
+// #{type-of($list2)}
+
+// */
+// $cname:'.box13';
+// $cname2:'color';
+
+// #{$cname+'3'}{
+//     // color: red;
+//     #{$cname2}:red;
+// }
+
+// $num:6;
+// .box14{
+//     @if($num==5){
+//         color: red;
+//     }@else if($num>5){
+//         color: blue;
+//     }@else{
+//         color: yellow;
+//     }
+// }
+
+// @for $i from 1 through 10 {
+//     #{'.span'+$i}{
+//         font-size: 10 + $i + 'px';
+//     }
+// }
+
+// @for $i from 1 to 10 {
+//     #{'.li'+$i}{
+//         font-size: 10 + $i + 'px';
+//     }
+// }
+
+// @each $item in $list2 {
+//     #{'.text-'+$item}{
+//         color: $item;
+//     }
+// }
+
+$num2:1;
+@while $num2<10 {
+    #{'.ul'+$num2}{
+        font-size: $num2 + 10px;
+    }
+    $num2:$num2+1;
+}
+
+@function foo($num){
+    @return $num * 100px;
+}
+.div12{
+    font-size: foo(2);
+}
+
+
+
+
